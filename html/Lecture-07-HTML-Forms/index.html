@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>STUDENT REGISTRATION</title>
+</head>
+<body>
+    <form>
+        <h2>--------------------------------------</h2>
+        <h2>STUDENT REGISTRATION</h2>
+        <h2>--------------------------------------</h2>
+
+        <table>
+            <tr>
+                <td><label>RollNo</label></td>
+                <td><input type="number"  ></td>
+            </tr>
+
+            <tr>
+                <td><label>Student's Name</label></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><label>Father's Name</label></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><label>Date Of Birth</label></td>
+                <td><input type="date"></td>
+            </tr>
+
+            <tr>
+                <td><label>Mobile No.</label></td>
+                <td><input type="tel"></td>
+            </tr>
+
+            <tr>
+                <td><label>Email Id</label></td>
+                <td><input type="email"></td>
+            </tr>
+
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="password"></td>
+            </tr>
+
+            <tr>
+                <td><label>Gender</label></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Dept.</label></td>
+                <td>
+                    <input type="radio" id="cse" name="dept" value="CSE">
+                    <label for="cse">CSE</label>
+                    <input type="radio" id="aiml" name="dept" value="AI/ML">
+                    <label for="aiml">AI/ML</label>
+                    <input type="radio" id="ece" name="dept" value="ECE">
+                    <label for="ece">ECE</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Course</label></td>
+                <td>
+                    <select>
+                        <option value="">Select Course</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Data Science">Data Science</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Student's Photo</label></td>
+                <td><input type="file"></td>
+            </tr>
+
+            <tr>
+                <td><label>City</label></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><label>Address</label></td>
+                <td><textarea rows="4" cols="20"></textarea></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
+
+
+
+<!-- Core Form Elements & Input Types
+ 
+<form>: The container wrapper for all user input controls and submission elements.
+
+<label>: Provides textual context describing what information belongs in an input field.
+
+<input>: The primary control tag used to collect user data.
+
+type="text": Generates a standard single-line text field.
+
+type="password": Generates a masked text field that hides typed characters visually.
+
+type="submit": Generates a button that triggers form submission.
+
+Key Concepts
+Accessibility & Usability: Using <label> elements ensures forms are readable, clear, and usable for both regular users and screen readers.
+
+Multiple Forms: A single HTML document can contain multiple independent <form> elements (e.g., separate Login and Registration forms). -->

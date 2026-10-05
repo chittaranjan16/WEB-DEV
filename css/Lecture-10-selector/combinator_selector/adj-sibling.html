@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjacent Sibling Selector</title>
+    <link rel="stylesheet" href="combinators.css">
+</head>
+<body>
+    <h1>Adjacent Sibling Selector (+)</h1>
+    <h2>First heading</h2>
+    <p>This paragraph comes immediately after the heading and is selected.</p>
+    <p>This paragraph does not immediately follow the heading, so it is not selected by h2 + p.</p>
+    <h2>Second heading</h2>
+    <div>A div sits between this heading and the paragraph.</div>
+    <p>This paragraph is not adjacent to the second heading.</p>
+</body>
+</html>
+<!-- NOTES
+1. Syntax: h2 + p { property: value; }
+2. The plus sign (+) selects the first matching next sibling immediately after the left-hand element.
+3. Both elements must share the same parent.
+4. If another element appears between them, the adjacent-sibling selector does not match the later element.
+5. External CSS: combinators.css (shared combinator stylesheet).
+-->

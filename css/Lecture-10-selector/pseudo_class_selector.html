@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pseudo class</title>
+
+    <style>
+        a{
+            margin: 10px;
+            font-size: 30px;
+        }
+        a:link{
+            background-color: aqua;
+        }
+
+
+        a:hover {
+            background-color: red;
+        }
+
+
+        a:visited {
+            color: blueviolet;
+        }
+
+
+        h1:first-child {
+            background-color: orange;
+        }
+
+
+
+        h3:last-child{
+            background-color: rgb(204, 56, 204);
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <a href="#">link1</a><br>
+    <a href="#">link2</a><br>
+    <a href="#">link3</a><br>
+    <a href="#">link4</a><br>
+
+
+
+    <div id="abc">
+        <h1>header</h1>
+        <p>para 1 </p>
+        <h1>header 2</h1>
+        <section>
+            <h2>heading 2 </h2>
+            <p> para 2 </p>
+            <div>
+                <h1>header 3 </h1>
+                <p>para 3 </p>
+                <h3>heading 3  // last element in div</h3>
+            </div>
+        </section>
+        <h3>heading 4     //last element in  main div</h3>
+    </div>
+    
+
+</body>
+
+</html>

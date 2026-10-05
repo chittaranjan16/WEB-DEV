@@ -1,0 +1,169 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+
+        /* main heading */
+        h1{
+            text-align: center;
+            background-color: rgba(73, 60, 51);
+            color: beige;
+            width: 100%;
+            margin: 0px;
+            padding: 25px;
+            border-bottom: 5px dotted beige;
+       
+            font-size: 50px;
+            
+
+        }
+
+        #main{
+            display:flex; 
+            margin: 0px; 
+            background-color: beige;      
+        }
+
+
+        #content{
+            background-color: beige;
+            /* background: linear-gradient(to right, #f34e02, #f1f1ef , rgb(6, 156, 31)); */
+            border: 5px;
+            align-items: center;
+            width: 80%;
+            margin: 0px;
+            padding: 30px;
+
+        }
+
+        #content h2{
+            font-size: 30px;
+            margin-left: 340px;
+            color: rgba(73, 60, 51);
+            padding-bottom: 20px;
+            
+        }
+
+        #content h3{
+            margin-top: 20px;
+            font-size: 25px;
+            color: rgba(73, 60, 51);
+            font-weight: 700;
+            
+        }
+
+        #content p{
+            margin-top: 10px;
+            font-size: 20px;
+            text-align: left;
+            color: brown
+             
+        }
+
+        label{
+            color: brown;
+    
+        }
+
+        input{
+            border-radius: 5px;
+            border: 1px solid brown;
+            padding: 2px;
+            background-color: beige;
+        }
+    
+
+        form {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 160px 250px; /* Label width | Input box width */
+            row-gap: 12px; /* Space between rows */
+            align-items: center; /* Align items vertically */
+            
+        }
+
+        #main button{
+            margin-top: 40px;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: beige;
+        }
+
+        #main button:hover{
+            background-color: rgba(73, 60, 51);
+            color: beige;
+        }
+        
+        .in{
+            font-size: 20px;
+            text-align: left;
+            color: brown;
+            
+            margin-top: 10px;
+
+        }
+
+
+        #coffee-image{
+            padding: 50px;
+        }
+
+    
+
+
+
+        /* leftside bar */
+        
+        #leftbar{
+            display: inline-block;
+
+            width: 20%;
+            height: 730px;
+            margin: 0px;
+            padding: 30px;
+        
+
+            font-size: 30px;
+            color: beige;
+            background-color: rgb(146, 107, 92);
+        
+            
+        }
+
+        #leftbar a {
+            display: block;
+            color: beige;
+            text-decoration: none;
+            font-size: 25px;
+            margin-bottom: -15px;
+            padding: 5px;
+        }
+
+
+
+        #leftbar a:hover{
+            background-color: beige;
+            color: rgba(73, 60, 51);
+            width: 150px;
+            border-radius: 4px;   
+        }
+    
+        /* footer */
+        #footer{
+            text-align: center;
+            background-color: rgba(73, 60, 51);
+        }
+
+        #footer p{
+            align-items: center;
+            padding: 20px;
+            color: beige;
+        }
+
+        
+    
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Descendant Combinator</title>
+    <link rel="stylesheet" href="combinators.css">
+</head>
+<body>
+    <h1>Descendant Combinator (space)</h1>
+    <p>The selector <code>.demo-box p</code> selects every paragraph anywhere inside <code>.demo-box</code>, including deeply nested paragraphs.</p>
+
+    <div class="demo-box">
+        <p>Paragraph 1: direct child — selected.</p>
+        <section>
+            <p>Paragraph 2: nested inside a section — also selected.</p>
+            <div>
+                <p>Paragraph 3: nested even deeper — still selected.</p>
+            </div>
+        </section>
+    </div>
+
+    <p>Paragraph 4: outside .demo-box — not selected.</p>
+</body>
+</html>
+<!-- NOTES
+DESCENDANT COMBINATOR (SPACE):
+1. Syntax: ancestor descendant { property: value; }
+2. There is a space between the ancestor selector and descendant selector.
+3. It selects matching elements at any depth inside the ancestor.
+4. In this example, .demo-box p selects Paragraphs 1, 2, and 3.
+5. Paragraph 4 is outside .demo-box, so it is not selected.
+6. The external CSS is shared: combinators.css.
+-->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pseudo class</title>
+
+    <style>
+       p{
+        font-size: 20px;
+       }
+
+
+       p::first-line{
+        background-color: aqua;
+       }
+
+
+       h1::first-letter{
+        background-color: blue;
+       }
+
+
+       p::selection{
+        background-color: pink;
+        
+       }
+
+       
+
+       h2::before{
+        content: "hello ";
+        background-color: blueviolet;
+       }
+
+
+       h2::after{
+        content: "bye ";
+        background-color: rgb(226, 198, 43);
+       }
+    </style>
+</head>
+
+<body>
+
+   <h1>PSEUDO ELEMENT </h1>
+   <h2>selector</h2>
+   <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem error id, esse ex quo dolore. Unde facilis eum provident magnam aspernatur, consequuntur nisi, animi minima culpa molestias temporibus illum cum?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id nobis voluptates alias sequi aperiam ducimus aspernatur quia beatae accusamus deserunt velit, illo distinctio libero, laboriosam praesentium iusto neque officiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi placeat nemo aut sed tempore repellendus delectus voluptatum sunt mollitia animi atque aperiam, cupiditate recusandae eius ex quae, odio quis libero.</P>
+
+</body>
+
+</html>

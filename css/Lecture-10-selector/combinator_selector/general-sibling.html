@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Sibling Selector</title>
+    <link rel="stylesheet" href="combinators.css">
+</head>
+<body>
+    <h1>General Sibling Selector (~)</h1>
+    <h2>Heading</h2>
+    <p>This paragraph is a following sibling and is selected.</p>
+    <div>A div appears between the heading and the next paragraph.</div>
+    <p>This paragraph is also selected, even though it is not adjacent.</p>
+    <p>This paragraph is also a following sibling of the h2.</p>
+    <section><p>This paragraph is nested inside a section, so it is not a sibling of the h2.</p></section>
+</body>
+</html>
+<!-- NOTES
+1. Syntax: h2 ~ p { property: value; }
+2. The tilde (~) selects all matching following siblings after the left-hand element.
+3. Both elements must share the same parent.
+4. Unlike +, ~ does not require the target element to be immediately next.
+5. It does not select elements nested inside another element.
+6. External CSS: combinators.css (shared combinator stylesheet).
+-->

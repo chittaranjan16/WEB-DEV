@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Child Combinator</title>
+    <link rel="stylesheet" href="combinators.css">
+</head>
+<body>
+    <h1>Child Combinator (&gt;)</h1>
+    <p>The selector <code>.demo-box &gt; p</code> selects only paragraphs that are direct children of <code>.demo-box</code>.</p>
+
+    <div class="demo-box">
+        <p>Paragraph 1: direct child — selected by both descendant and child selectors.</p>
+        <section>
+            <p>Paragraph 2: nested inside a section — selected by the descendant selector, but NOT by the child selector.</p>
+        </section>
+        <p>Paragraph 3: direct child — selected by both selectors.</p>
+    </div>
+
+    <p>Paragraph 4: outside .demo-box — not selected by either selector.</p>
+</body>
+</html>
+
+
+
+
+
+
+<!-- NOTES
+CHILD COMBINATOR (>):
+1. Syntax: parent > child { property: value; }
+2. It selects only elements immediately/directly inside the parent.
+3. In this example, .demo-box > p selects Paragraph 1 and Paragraph 3 only.
+4. Paragraph 2 is nested inside section, so it is not a direct child of .demo-box.
+5. Compare with the descendant selector, which selects paragraphs at any nesting depth.
+6. The external CSS is shared: combinators.css.
+-->

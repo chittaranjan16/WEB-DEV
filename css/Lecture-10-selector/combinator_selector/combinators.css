@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    line-height: 1.6;
+    color: #222;
+}
+
+h1 {
+    color: #263b68;
+}
+
+.demo-box {
+    border: 2px solid #777;
+    padding: 15px;
+    margin: 15px 0;
+    background: #f7f9fc;
+}
+
+
+
+
+
+/* Descendant combinator: every p anywhere inside .demo-box. */
+.demo-box p {
+    background: #e8f5e9;
+    padding: 8px;
+}
+
+
+
+
+
+
+/* Child combinator: only p elements that are direct children of .demo-box. */
+.demo-box > p {
+    border-left: 5px solid #2e7d32;
+}
+
+
+
+
+
+
+/* Adjacent sibling: only a p immediately following an h2. */
+h2 + p {
+    background: #fff2a8;
+    border-left: 5px solid #e0ad00;
+    padding: 8px;
+}
+
+
+
+
+
+
+
+/* General sibling: all p siblings that appear after an h2 under the same parent. */
+h2 ~ p {
+    outline: 1px solid #1976d2;
+    padding: 8px;
+}
+
+
+
+
+
+/* The h2 + p and h2 ~ p examples intentionally overlap: inspect each page to compare them. */

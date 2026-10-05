@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Test</title>
+</head>
+<body>
+
+    <!-- Test 1: method="get" | Test 2: method="post" -->
+    <form action="result.html" method="get">
+        <h2>Login</h2>
+
+        <label for="user">Username:</label><br>
+        <input type="text" id="user" name="username"><br><br>
+
+        <label for="pass">Password:</label><br>
+        <input type="password" id="pass" name="password"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+</html>
+
+
+
+<!-- 
+Core Attributes & Form Mechanics
+
+
+action: Specifies the target URL or file path where form data is sent upon submission (e.g., action="result.html").
+
+method: Specifies the HTTP protocol used to transmit the form data (GET or POST).
+
+name: Identifies each field when submitted. Without a name attribute, an input's data is omitted from submission payload altogether.
+
+GET vs. POST Method Comparison
+GET Method (method="get"):
+
+Appends form data directly to the browser URL as query string parameters (e.g., result.html?username=rahul&course=Java).
+
+Ideal for search queries, bookmarkable pages, and non-sensitive data requests.
+
+POST Method (method="post"):
+
+Sends form data inside the HTTP request body rather than appending it to the visible URL.
+
+Used for operations that submit processing data or modify backend state.
+
+Note: POST hides values from the address bar, but requires protocol encryption (HTTPS) to be fully secure against network sniffing. -->

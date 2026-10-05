@@ -1,0 +1,66 @@
+
+/* Universal selector: applies box-sizing to every element. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    line-height: 1.6;
+    color: #222;
+}
+
+
+
+
+
+/* Class selector: matches every element with class="highlight". */
+.highlight {
+    background-color: #fff2a8;
+    border-left: 5px solid #e0ad00;
+    padding: 10px;
+}
+
+.tip {
+    color: #176b3a;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* ID selector: matches the element with id="main-message". */
+#main-message {
+    background-color: #e3f2fd;
+    border: 2px solid #1976d2;
+    padding: 12px;
+}
+
+
+
+
+
+
+/* Grouping selector: the same styles are applied to h1, h2 and p. */
+h1, h2, p {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #263b68;
+}
+
+h2 {
+    color: #6a3d8f;
+}
+
+button {
+    padding: 8px 14px;
+    border: 0;
+    background: #263b68;
+    color: white;
+    border-radius: 4px;
+}
