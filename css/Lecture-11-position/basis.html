@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Properties</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            margin-top: 35px;
+        }
+
+        .box {
+            width: 120px;
+            height: 100px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+
+        /* 1. STATIC */
+        #a {
+            background-color: blueviolet;
+            color: white;
+            position: static;
+            left: 100px;
+            top: 50px;
+        }
+
+        /* 2. RELATIVE */
+        #b {
+            background-color: lightblue;
+            position: relative;
+            left: 100px;
+            top: 20px;
+        }
+
+        /* 3. ABSOLUTE */
+        #c {
+            width: 300px;
+            height: 200px;
+            background-color: lightyellow;
+            border: 2px solid orange;
+            position: relative;
+        }
+
+        #child {
+            width: 120px;
+            height: 80px;
+            background-color: lightgreen;
+            border: 2px solid green;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        /* 4. FIXED */
+        #fixed {
+            width: 150px;
+            height: 50px;
+            background-color: tomato;
+            color: white;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+        }
+
+        /* 5. STICKY */
+        #sticky {
+            background-color: gold;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            z-index: 100;
+        }
+
+        .content1{
+            height: 1300px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Position Properties</h1>
+
+
+    <!-- 1. STATIC -->
+    <h2>1. Static Position</h2>
+    <p>
+        Static is the default position. The top, left, right and bottom
+        properties do not move a static element.
+    </p>
+
+    <div class="box" id="a">Static</div>
+
+
+
+
+
+
+    <!-- 2. RELATIVE -->
+    <h2>2. Relative Position</h2>
+    <p>
+        Relative moves the element from its original position.
+        Its original space remains reserved.
+    </p>
+
+    <div class="box" id="b">Relative</div>
+
+
+
+
+
+
+    <!-- 3. ABSOLUTE -->
+    <h2>3. Absolute Position</h2>
+    <p>
+        The child is positioned relative to its nearest positioned
+        ancestor. Here, the parent uses position: relative.
+    </p>
+
+    <div id="c">
+        Parent (Relative)
+        <div class="box" id="child">Absolute Child</div>
+    </div>
+
+
+
+
+
+
+    <!-- 4. FIXED -->
+    <h2>4. Fixed Position</h2>
+    <p>
+        Look at the bottom-right corner. The red box stays fixed
+        relative to the browser viewport while you scroll.
+    </p>
+
+    <div class="box" id="fixed">Fixed</div>
+
+
+
+
+
+    <!-- 5. STICKY -->
+    <h2>5. Sticky Position</h2>
+    <p>
+        Scroll down to see how the yellow bar sticks to the top
+        of the viewport when it reaches that position.
+    </p>
+
+    <div class="content">
+        Scroll down to test sticky positioning.
+        <p>Sticky works within its scrolling container and remains
+        in normal document flow until it reaches its offset.</p>
+    </div>
+
+    <div id="sticky">Sticky Header</div>
+
+    <div class="content1">
+        <h3>Content Section 1</h3>
+        <p>Keep scrolling. The sticky header stays at the top.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aliquam iusto, maiores numquam, mollitia quas maxime culpa dolorem odit nemo incidunt! Quia repudiandae perferendis blanditiis tenetur. Inventore perspiciatis dolores cum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos qui iusto amet odit consectetur fugiat dolore. At, adipisci, porro, inventore tempora culpa maxime repellendus aliquam repudiandae enim autem possimus repellat? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas deserunt, architecto sapiente possimus distinctio expedita iure voluptatibus nemo. Iure vitae nam expedita quibusdam aliquam rerum velit maxime consequatur mollitia suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, itaque voluptate fugit labore, quod vel omnis aut dolores quibusdam et hic quidem deserunt vitae a, debitis magnam. Rem, doloremque ab? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint accusamus quae animi accusantium assumenda, similique porro dolore esse minus unde, repellendus ratione minima iste nostrum? Quo vitae sunt minima voluptatem.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ducimus, sapiente perferendis totam, facilis at earum iste, iusto voluptatem veniam ipsa. Blanditiis ab debitis, nostrum eius labore tempora maiores perspiciatis!  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sunt in, laudantium hic totam non necessitatibus assumenda earum sed consectetur aspernatur mollitia, perferendis vero. Quam aperiam repellat quia officiis porro.  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, voluptate? Doloremque possimus minus pariatur nam. Reiciendis quam numquam reprehenderit, soluta voluptatibus eligendi doloremque. Quam officiis qui ex ad nobis animi.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure fugit tenetur cumque nesciunt, fugiat commodi officia sed ab aut similique eligendi consequatur quas architecto nobis? Maxime magnam id eaque placeat.   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque mollitia laborum odio aperiam officiis iure provident cum sit, at, velit voluptatem! Vero esse tenetur, neque voluptatum animi sit facilis tempore.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab commodi quae, unde quasi rerum, vero est architecto aut harum explicabo eos? Quasi inventore cumque quia suscipit veniam eius itaque fuga.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore quod in, aut delectus tenetur vero, repudiandae maxime laboriosam architecto placeat voluptate molestiae officia nam consequatur exercitationem id laborum omnis.    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque libero reiciendis iure minus, labore et dolore qui cumque, cupiditate vel vitae eos voluptas porro laudantium. Iste totam possimus ea accusantium?
+        </p>
+    </div>
+
+   
+</body>
+</html>
