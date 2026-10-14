@@ -1,0 +1,275 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Properties</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            margin-top: 35px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* COMMON BOX */
+        .box {
+            width: 120px;
+            height: 80px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-sizing: border-box;
+            margin: 5px;
+        }
+
+        /* 1. BLOCK */
+        .block {
+            display: block;
+            background-color: lightblue;
+        }
+
+        /* 2. INLINE */
+        .inline {
+            display: inline;
+            background-color: lightgreen;
+            color: black;
+        }
+
+        /* 3. INLINE-BLOCK */
+        .inline-block {
+            display: inline-block;
+            background-color: lightcoral;
+        }
+
+        /* 4. NONE */
+        .none {
+            display: none;
+            background-color: gold;
+        }
+
+        /* 5. FLEX */
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 2px solid gray;
+        }
+
+        .flex-item {
+            width: 100px;
+            height: 80px;
+            background-color: skyblue;
+            border: 2px solid navy;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        /* 6. GRID */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            gap: 10px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 2px solid gray;
+        }
+
+        .grid-item {
+            height: 80px;
+            background-color: plum;
+            border: 2px solid purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        /* 7. DISPLAY NONE VS VISIBILITY */
+        .visibility-hidden {
+            visibility: hidden;
+            background-color: orange;
+        }
+
+        .comparison-box {
+            width: 120px;
+            height: 60px;
+            border: 2px solid black;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        /* 8. FLEX DIRECTION */
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            width: 130px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Display Properties</h1>
+
+    <!-- 1. BLOCK -->
+    <h2>1. Display: Block</h2>
+    <p>
+        A block element starts on a new line and normally takes
+        the full available width of its parent.
+        You can set its width and height.
+    </p>
+
+    <div class="box block">Block 1</div>
+    <div class="box block">Block 2</div>
+    <div class="box block">Block 3</div>
+
+
+    <!-- 2. INLINE -->
+    <h2>2. Display: Inline</h2>
+    <p>
+        Inline elements stay on the same line when space is available.
+        Width and height do not control their size in the usual way.
+    </p>
+
+    <span class="inline">Inline 1</span>
+    <span class="inline">Inline 2</span>
+    <span class="inline">Inline 3</span>
+
+    <p>
+        Notice: Inline elements do not behave like normal block boxes.
+        Padding and borders can still be applied.
+    </p>
+
+
+    <!-- 3. INLINE-BLOCK -->
+    <h2>3. Display: Inline-Block</h2>
+    <p>
+        Inline-block elements stay on the same line when space is
+        available, while allowing width and height to be set.
+    </p>
+
+    <div class="box inline-block">Box 1</div>
+    <div class="box inline-block">Box 2</div>
+    <div class="box inline-block">Box 3</div>
+
+
+    <!-- 4. NONE -->
+    <h2>4. Display: None</h2>
+    <p>
+        The yellow box is hidden using display: none.
+        It is removed from the page layout, so it takes no space.
+    </p>
+
+    <div class="box" style="background-color: lightgray;">
+        Before
+    </div>
+
+    <div class="box none">Hidden Box</div>
+
+    <div class="box" style="background-color: lightgreen;">
+        After
+    </div>
+
+
+    <!-- 5. FLEX -->
+    <h2>5. Display: Flex</h2>
+    <p>
+        Flexbox arranges items along a main axis.
+        By default, items are arranged horizontally in a row.
+    </p>
+
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+
+    <!-- 6. GRID -->
+    <h2>6. Display: Grid</h2>
+    <p>
+        Grid arranges items into rows and columns.
+        Here, three columns are created using grid-template-columns.
+    </p>
+
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+
+
+    <!-- 7. NONE VS VISIBILITY HIDDEN -->
+    <h2>7. Display: None vs Visibility: Hidden</h2>
+    <p>
+        Both hide an element, but their layout behavior is different.
+        Display none removes the element's space; visibility hidden
+        preserves its space.
+    </p>
+
+    <div class="comparison-box" style="background-color: lightblue;">
+        Box 1
+    </div>
+
+    <div class="comparison-box" style="display: none;">
+        Hidden
+    </div>
+
+    <div class="comparison-box" style="background-color: lightgreen;">
+        Box 2
+    </div>
+
+    <p>Now observe visibility: hidden.</p>
+
+    <div class="comparison-box" style="background-color: lightblue;">
+        Box 1
+    </div>
+
+    <div class="comparison-box visibility-hidden">
+        Hidden
+    </div>
+
+    <div class="comparison-box" style="background-color: lightgreen;">
+        Box 2
+    </div>
+
+
+    <!-- 8. FLEX DIRECTION -->
+    <h2>8. Flex Direction: Column</h2>
+    <p>
+        The flex-direction property changes the main axis.
+        Column arranges items vertically.
+    </p>
+
+    <div class="flex-column">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+</body>
+</html>
+```

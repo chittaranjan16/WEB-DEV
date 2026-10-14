@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect | Welcome</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+        }
+
+        /* Main page border */
+        .page {
+            position: relative;
+            border: 2px solid #7048ff;
+            background-color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: relative;
+            height: 66px;
+            background-color: #506bff;
+        }
+
+        .logo {
+            position: absolute;
+            top: 18px;
+            left: 15px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .nav-right {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            height: 50px;
+        }
+
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin-left: 10px;
+            border: 3px solid white;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 29px;
+            line-height: 48px;
+            box-sizing: content-box;
+        }
+
+        /* Notification badge */
+        .dot {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            width: 16px;
+            height: 16px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        /* Login section */
+        .login-page {
+            position: relative;
+            height: 600px;
+            background-color: white;
+        }
+
+        .login-box {
+            position: absolute;
+            top: 85px;
+            left: calc(50% - 227px);
+            width: 454px;
+            height: 363px;
+            padding: 40px;
+            box-sizing: border-box;
+            background-color: #506bff;
+            border-radius: 16px;
+        }
+
+        /* Input container */
+        .input-box {
+            position: relative;
+            height: 50px;
+            margin-top: 62px;
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 12px;
+            left: 17px;
+            font-size: 23px;
+            z-index: 1;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 50px;
+            padding: 10px 45px;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            background-color: white;
+            color: #506bff;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .input-box input::placeholder {
+            color: #506bff;
+            opacity: 1;
+        }
+
+        .username-icon {
+            color: #6515e8;
+        }
+
+        .password-icon {
+            color: #506bff;
+        }
+
+        .eye {
+            position: absolute;
+            top: 13px;
+            right: 15px;
+            cursor: pointer;
+            color: #506bff;
+        }
+
+        /* Login button */
+        .login-button {
+            position: absolute;
+            top: 282px;
+            left: 96px;
+            width: 260px;
+            height: 44px;
+            border: none;
+            border-radius: 11px;
+            background-color: #ffbd59;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Community feed */
+        .feed-page {
+            position: relative;
+            min-height: 550px;
+            padding: 30px 20px;
+            background-color: #f5f7ff;
+            border-top: 1px solid #ddd;
+        }
+
+        .feed-heading {
+            text-align: center;
+            color: #506bff;
+        }
+
+        /* Post card */
+        .post {
+            position: relative;
+            width: 350px;
+            margin: 25px auto;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: white;
+            border: 2px solid #d0d5e2;
+            border-radius: 12px;
+        }
+
+        .post-header {
+            position: relative;
+            height: 55px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .post-avatar {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 35px;
+            height: 35px;
+            background-color: #dce5ff;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+        }
+
+        .online-dot {
+            position: absolute;
+            top: 30px;
+            left: 32px;
+            width: 10px;
+            height: 10px;
+            background-color: #25c46a;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+
+        .user-name {
+            position: absolute;
+            top: 15px;
+            left: 50px;
+        }
+
+        .post-content {
+            margin-top: 15px;
+            padding: 5px;
+        }
+
+        .post-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .post-footer {
+            position: relative;
+            height: 45px;
+            margin-top: 10px;
+        }
+
+        .like-button {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            padding: 8px 12px;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Stacked friend profiles */
+        .profile-images {
+            position: absolute;
+            top: 5px;
+            right: 0;
+            width: 125px;
+            height: 35px;
+        }
+
+        .friend {
+            position: absolute;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            border: 2px solid white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        .friend-one {
+            left: 0;
+            background-color: lightblue;
+        }
+
+        .friend-two {
+            left: 18px;
+            background-color: pink;
+        }
+
+        .friend-three {
+            left: 36px;
+            background-color: lightgreen;
+        }
+
+        .friend-four {
+            left: 54px;
+            background-color: lightyellow;
+        }
+
+        .more-friends {
+            position: absolute;
+            top: 9px;
+            left: 92px;
+            font-size: 12px;
+        }
+
+        /* Contact button */
+        .contact {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            padding: 14px 22px;
+            background-color: #506bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            z-index: 11;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="logo">Connect.</div>
+
+            <div class="nav-right">
+                <a href="#feed-page" class="nav-link"
+                   aria-label="Notifications">
+                    🔔
+                    <span class="dot"></span>
+                </a>
+                <a href="#login-page" class="nav-link"
+                   aria-label="Profile">
+                    👤
+                </a>
+            </div>
+        </div>
+
+        <!-- Login section -->
+        <section class="login-page" id="login-page">
+            <div class="login-box">
+                <form action="#feed-page">
+                    <div class="input-box">
+                        <span class="input-icon username-icon">♟</span>
+                        <input type="text" placeholder="username" >
+                    </div>
+
+                    <div class="input-box">
+                        <span class="input-icon password-icon">⦿</span>
+
+                        <input type="password" id="password"placeholder="password">
+                        <span class="eye"
+                              onclick="showPassword()">👁</span>
+                    </div>
+
+                    <button class="login-button" type="submit">
+                        login
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Community feed -->
+        <section class="feed-page" id="feed-page">
+
+            <h2 class="feed-heading">Community Feed</h2>
+
+            <div class="post">
+
+                <div class="post-header">
+
+                    <div class="post-avatar">👤</div>
+
+                    <span class="online-dot"></span>
+
+                    <div class="user-name">Alex#12234</div>
+
+                </div>
+
+                <div class="post-content">
+
+                    <img
+                        src="https://img.magnific.com/free-vector/black-new-post-doodle-typography-beige-background-vector_53876-177194.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="New post illustration">
+
+                </div>
+
+                <div class="post-footer">
+
+                    <button class="like-button"
+                            onclick="toggleLike(this)">
+                        ♡ Like
+                    </button>
+
+                    <div class="profile-images">
+
+                        <div class="friend friend-one">👤</div>
+                        <div class="friend friend-two">👤</div>
+                        <div class="friend friend-three">👤</div>
+                        <div class="friend friend-four">👤</div>
+
+                        <span class="more-friends">5+</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Fixed contact button -->
+    <a href="#feed-page" class="contact">Contact</a>
+
+    <script>
+        function showPassword() {
+            const password = document.getElementById("password");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+
+        function toggleLike(button) {
+            if (button.innerHTML.includes("♡")) {
+                button.innerHTML = "♥ Liked";
+            } else {
+                button.innerHTML = "♡ Like";
+            }
+        }
+    </script>
+
+</body>
+</html>
