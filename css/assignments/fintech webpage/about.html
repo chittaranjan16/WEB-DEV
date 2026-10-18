@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | FinanceUs</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333D38;
+            
+        }
+
+        .about-section {
+            width: 100%;
+            padding: 80px 24px;
+            overflow: hidden;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 64px;
+        }
+
+        /* LEFT CONTENT */
+
+        .about-content {
+            flex: 1;
+            max-width: 540px;
+        }
+
+        .about-label {
+            display: inline-block;
+            color: #15803D;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .about-content h1 {
+            color: #142D24;
+            font-size: 44px;
+            line-height: 1.2;
+            margin: 0 0 24px;
+        }
+
+        .about-content p {
+            color: #69736D;
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0 0 18px;
+        }
+
+        .about-content .mission {
+            color: #142D24;
+            font-weight: bold;
+            margin-top: 22px;
+        }
+
+        .about-button {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 14px 24px;
+            background-color: #142D24;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease,
+                        transform 0.3s ease;
+        }
+
+        .about-button:hover {
+            background-color: #24513E;
+            transform: translateY(-2px);
+        }
+
+        /* RIGHT VISUAL */
+
+        .about-visual {
+            flex: 1;
+            min-width: 0;
+            max-width: 500px;
+            min-height: 400px;
+            background-color: #E8F2E8;
+            border-radius: 24px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+        }
+
+        .visual-decoration {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #D8F3DC;
+        }
+
+        .decoration-one {
+            width: 100px;
+            height: 100px;
+            top: 24px;
+            right: 28px;
+        }
+
+        .decoration-two {
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            left: 20px;
+            background-color: #B7DCC0;
+        }
+
+        /* MAIN SAVINGS CARD */
+
+        .savings-card {
+            width: 100%;
+            max-width: 350px;
+            padding: 28px;
+            background-color: #FFFFFF;
+            border: 1px solid #E3E8E3;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(20, 45, 36, 0.10);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .card-title {
+            color: #69736D;
+            font-size: 14px;
+        }
+
+        .wallet-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #D8F3DC;
+            border-radius: 12px;
+            color: #142D24;
+        }
+
+        .wallet-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .balance {
+            color: #142D24;
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .balance-caption {
+            color: #69736D;
+            font-size: 13px;
+            margin-bottom: 28px;
+        }
+
+        .goal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .goal-header h2 {
+            color: #142D24;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .goal-percentage {
+            color: #15803D;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .progress-track {
+            height: 10px;
+            width: 100%;
+            background-color: #E8EDE8;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 75%;
+            height: 100%;
+            background-color: #269653;
+            border-radius: 20px;
+        }
+
+        .goal-caption {
+            margin-top: 12px;
+            color: #69736D;
+            font-size: 13px;
+        }
+
+        /* MINI CHART */
+
+        .chart-card {
+            position: absolute;
+            z-index: 2;
+            right: -16px;
+            bottom: 30px;
+            width: 160px;
+            padding: 16px;
+            background-color: #FFFFFF;
+            border: 1px solid #E3E8E3;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(20, 45, 36, 0.10);
+        }
+
+        .chart-card h3 {
+            margin: 0 0 14px;
+            color: #69736D;
+            font-size: 12px;
+        }
+
+        .chart {
+            height: 60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .bar {
+            flex: 1;
+            min-width: 0;
+            background-color: #B7DCC0;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .bar:nth-child(1) {
+            height: 35%;
+        }
+
+        .bar:nth-child(2) {
+            height: 55%;
+        }
+
+        .bar:nth-child(3) {
+            height: 45%;
+        }
+
+        .bar:nth-child(4) {
+            height: 75%;
+        }
+
+        .bar:nth-child(5) {
+            height: 100%;
+            background-color: #269653;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 60px 20px;
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 40px;
+            }
+
+            .about-content {
+                max-width: 100%;
+            }
+
+            .about-content h1 {
+                font-size: 34px;
+            }
+
+            .about-visual {
+                width: 100%;
+                max-width: 500px;
+                min-height: 360px;
+                margin: 0 auto;
+                padding: 24px;
+            }
+
+            .savings-card {
+                padding: 22px;
+            }
+
+            .balance {
+                font-size: 30px;
+            }
+
+            .chart-card {
+                right: 8px;
+                bottom: 12px;
+                width: 135px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .about-content h1 {
+                font-size: 29px;
+            }
+
+            .about-visual {
+                min-height: 330px;
+                padding: 16px;
+            }
+
+            .savings-card {
+                padding: 18px;
+            }
+
+            .chart-card {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+     <div class="navbar">
+        <a href="index.html" id="h1">FinanceUs.</a>
+
+        <div>
+            <a href="index.html">Features</a>
+            <a href="howitworks.html">How It Works</a>
+            <a href="about.html">About</a>
+        </div>
+
+
+        <div>
+           <button>Log In</button>
+           <button>Get Started </button>
+        </div>
+     </div>
+
+    <section class="about-section">
+        <div class="about-container">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="about-content">
+
+                <span class="about-label">ABOUT FINANCEUS</span>
+
+                <h1>
+                    Helping You Build a Better Financial Future.
+                </h1>
+
+                <p>
+                    At FinanceUs, we believe managing money should be
+                    simple, clear, and stress-free. Our goal is to help
+                    people understand their spending habits and make
+                    smarter financial decisions.
+                </p>
+
+                <p>
+                    From tracking everyday expenses to planning
+                    long-term savings, FinanceUs brings essential
+                    money management tools together in one
+                    convenient place.
+                </p>
+
+                <p class="mission">
+                    Our mission is simple: make every rupee count.
+                </p>
+
+                <a href="#learn-more" class="about-button">
+                    Learn More About Us &rarr;
+                </a>
+
+            </div>
+
+            <!-- RIGHT VISUAL -->
+
+            <div class="about-visual">
+
+                <div class="visual-decoration decoration-one"></div>
+                <div class="visual-decoration decoration-two"></div>
+
+                <!-- SAVINGS CARD -->
+
+                <div class="savings-card">
+
+                    <div class="card-top">
+                        <span class="card-title">Your Savings</span>
+
+                        <div class="wallet-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="1.8"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <rect x="3" y="6" width="18" height="15" rx="2"/>
+                                <path d="M3 10h18"/>
+                                <path d="M16 15h.01"/>
+                                <path d="M5 6V4a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="balance">&#8377;25,000</div>
+
+                    <div class="balance-caption">
+                        Your savings balance
+                    </div>
+
+                    <div class="goal-header">
+                        <h2>Savings Goal</h2>
+                        <span class="goal-percentage">75%</span>
+                    </div>
+
+                    <div class="progress-track"
+                         role="progressbar"
+                         aria-label="Savings goal progress"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         aria-valuenow="75">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <div class="goal-caption">
+                        Keep going, you're making progress!
+                    </div>
+
+                </div>
+
+                <!-- DECORATIVE CHART -->
+
+                <div class="chart-card">
+                    <h3>Savings Growth</h3>
+
+                    <div class="chart" aria-hidden="true">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
