@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Background Properties</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* COMMON BOX */
+        .box {
+            width: 100%;
+            max-width: 700px;
+            height: 180px;
+            border: 2px solid black;
+            margin: 15px 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 1. BACKGROUND COLOR */
+        .bg-color {
+            background-color: lightblue;
+        }
+
+        /* 2. BACKGROUND IMAGE */
+        .bg-image {
+            color: white;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+            );
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 3. BACKGROUND REPEAT */
+        .bg-repeat {
+            height: 200px;
+            background-color: white;
+            background-image: url(
+                "https://www.transparenttextures.com/patterns/cubes.png"
+            );
+            background-repeat: repeat;
+        }
+
+        .bg-no-repeat {
+            background-color: lightyellow;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300"
+            );
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 150px;
+        }
+
+        .bg-repeat-x {
+            background-color: white;
+            background-image: url(
+                "https://www.transparenttextures.com/patterns/cubes.png"
+            );
+            background-repeat: repeat-x;
+        }
+
+        .bg-repeat-y {
+            background-color: white;
+            background-image: url(
+                "https://www.transparenttextures.com/patterns/cubes.png"
+            );
+            background-repeat: repeat-y;
+        }
+
+        /* 4. BACKGROUND SIZE */
+        .bg-cover {
+            color: white;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+            );
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-contain {
+            background-color: #ddd;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500"
+            );
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .bg-custom-size {
+            color: white;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500"
+            );
+            background-size: 250px 120px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #444;
+        }
+
+        /* 5. BACKGROUND POSITION */
+        .position-left {
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300"
+            );
+            background-size: 180px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-color: #eee;
+        }
+
+        .position-right {
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300"
+            );
+            background-size: 180px;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-color: #eee;
+        }
+
+        .position-top {
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300"
+            );
+            background-size: 180px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-color: #eee;
+        }
+
+        .position-custom {
+            color: white;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+            );
+            background-size: cover;
+            background-position: 80% 30%;
+        }
+
+        /* 6. BACKGROUND ATTACHMENT */
+        .attachment-scroll {
+            color: white;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+            );
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+        }
+
+        .attachment-fixed {
+            color: white;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+            );
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* 7. LINEAR GRADIENT */
+        .linear-gradient {
+            color: white;
+            background-image: linear-gradient(
+                to right,
+                blue,
+                purple
+            );
+        }
+
+        .gradient-diagonal {
+            color: white;
+            background-image: linear-gradient(
+                135deg,
+                orange,
+                red,
+                purple
+            );
+        }
+
+        .gradient-transparent {
+            color: white;
+            background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.9),
+                rgba(0, 0, 0, 0.1)
+            ),
+            url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+            );
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 8. RADIAL GRADIENT */
+        .radial-gradient {
+            color: white;
+            background-image: radial-gradient(
+                circle,
+                yellow,
+                orange,
+                red
+            );
+        }
+
+        /* 9. CONIC GRADIENT */
+        .conic-gradient {
+            color: white;
+            background-image: conic-gradient(
+                red,
+                yellow,
+                lime,
+                cyan,
+                blue,
+                magenta,
+                red
+            );
+        }
+
+        /* 10. MULTIPLE BACKGROUNDS */
+        .multiple-bg {
+            color: white;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)
+                ),
+                url(
+                    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+                );
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 11. BACKGROUND CLIP */
+        .clip-border {
+            background-color: orange;
+            background-clip: border-box;
+        }
+
+        .clip-padding {
+            background-color: lightgreen;
+            background-clip: padding-box;
+        }
+
+        .clip-content {
+            background-color: skyblue;
+            background-clip: content-box;
+            padding: 25px;
+            border: 10px dashed black;
+        }
+
+        /* 12. BACKGROUND ORIGIN */
+        .origin-border {
+            background-image: url(
+                "https://www.transparenttextures.com/patterns/cubes.png"
+            );
+            background-color: lightyellow;
+            background-origin: border-box;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 20px;
+            border: 10px dashed orange;
+        }
+
+        .origin-padding {
+            background-image: url(
+                "https://www.transparenttextures.com/patterns/cubes.png"
+            );
+            background-color: lightyellow;
+            background-origin: padding-box;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 20px;
+            border: 10px dashed orange;
+        }
+
+        .origin-content {
+            background-image: url(
+                "https://www.transparenttextures.com/patterns/cubes.png"
+            );
+            background-color: lightyellow;
+            background-origin: content-box;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 20px;
+            border: 10px dashed orange;
+        }
+
+        /* 13. BACKGROUND BLEND MODE */
+        .blend-mode {
+            color: white;
+            background-color: navy;
+            background-image: url(
+                "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+            );
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+        }
+
+        /* 14. BACKGROUND SHORTHAND */
+        .bg-shorthand {
+            color: white;
+            background:
+                #333
+                url(
+                    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000"
+                )
+                no-repeat
+                center / cover;
+        }
+
+        /* 15. PRACTICAL HERO SECTION */
+        .hero {
+            min-height: 350px;
+            padding: 30px;
+            color: white;
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.3)
+                ),
+                url(
+                    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200"
+                )
+                center / cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .hero h2 {
+            color: white;
+            margin: 0 0 10px;
+            font-size: 36px;
+        }
+
+        .hero p {
+            max-width: 500px;
+        }
+
+        .hero button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: orange;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            .box {
+                height: 150px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Background Properties</h1>
+
+    <p>
+        CSS background properties control the background color,
+        images, image size, position, repetition, gradients,
+        and other visual effects of an element.
+    </p>
+
+
+    <!-- 1. BACKGROUND COLOR -->
+    <h2>1. Background Color</h2>
+    <p>
+        background-color sets the background color of an element.
+    </p>
+
+    <div class="box bg-color">
+        Background Color
+    </div>
+
+
+    <!-- 2. BACKGROUND IMAGE -->
+    <h2>2. Background Image</h2>
+    <p>
+        background-image displays an image behind an element's content.
+    </p>
+
+    <div class="box bg-image">
+        Background Image
+    </div>
+
+
+    <!-- 3. BACKGROUND REPEAT -->
+    <h2>3. Background Repeat</h2>
+
+    <h3>repeat</h3>
+    <p>Repeats the image horizontally and vertically.</p>
+    <div class="box bg-repeat">
+        Repeat
+    </div>
+
+    <h3>no-repeat</h3>
+    <p>Displays the background image only once.</p>
+    <div class="box bg-no-repeat">
+        No Repeat
+    </div>
+
+    <h3>repeat-x</h3>
+    <p>Repeats the image horizontally.</p>
+    <div class="box bg-repeat-x">
+        Repeat X
+    </div>
+
+    <h3>repeat-y</h3>
+    <p>Repeats the image vertically.</p>
+    <div class="box bg-repeat-y">
+        Repeat Y
+    </div>
+
+
+    <!-- 4. BACKGROUND SIZE -->
+    <h2>4. Background Size</h2>
+
+    <h3>cover</h3>
+    <p>
+        Scales the image to cover the entire element.
+        Some parts of the image may be cropped.
+    </p>
+    <div class="box bg-cover">
+        Cover
+    </div>
+
+    <h3>contain</h3>
+    <p>
+        Scales the image to fit completely inside the element.
+        Empty space may remain.
+    </p>
+    <div class="box bg-contain">
+        Contain
+    </div>
+
+    <h3>Custom Size</h3>
+    <p>background-size: 250px 120px;</p>
+    <div class="box bg-custom-size">
+        Custom Size
+    </div>
+
+
+    <!-- 5. BACKGROUND POSITION -->
+    <h2>5. Background Position</h2>
+    <p>
+        Controls where the background image is placed inside the element.
+    </p>
+
+    <h3>left center</h3>
+    <div class="box position-left">
+        Left Center
+    </div>
+
+    <h3>right center</h3>
+    <div class="box position-right">
+        Right Center
+    </div>
+
+    <h3>center top</h3>
+    <div class="box position-top">
+        Center Top
+    </div>
+
+    <h3>Custom Position: 80% 30%</h3>
+    <div class="box position-custom">
+        Custom Position
+    </div>
+
+
+    <!-- 6. BACKGROUND ATTACHMENT -->
+    <h2>6. Background Attachment</h2>
+
+    <h3>scroll</h3>
+    <p>
+        The background moves with the element as the page scrolls.
+    </p>
+    <div class="box attachment-scroll">
+        Scroll
+    </div>
+
+    <h3>fixed</h3>
+    <p>
+        The background is fixed relative to the viewport in browsers
+        that support this behavior. It may behave differently on mobile.
+    </p>
+    <div class="box attachment-fixed">
+        Fixed
+    </div>
+
+
+    <!-- 7. LINEAR GRADIENT -->
+    <h2>7. Linear Gradient</h2>
+    <p>
+        Creates a gradual color transition in a chosen direction.
+    </p>
+
+    <h3>Left to Right</h3>
+    <div class="box linear-gradient">
+        Linear Gradient
+    </div>
+
+    <h3>Diagonal Gradient</h3>
+    <div class="box gradient-diagonal">
+        Diagonal Gradient
+    </div>
+
+    <h3>Gradient Over an Image</h3>
+    <div class="box gradient-transparent">
+        Gradient Overlay
+    </div>
+
+
+    <!-- 8. RADIAL GRADIENT -->
+    <h2>8. Radial Gradient</h2>
+    <p>
+        Creates a circular or elliptical gradient that spreads outward.
+    </p>
+
+    <div class="box radial-gradient">
+        Radial Gradient
+    </div>
+
+
+    <!-- 9. CONIC GRADIENT -->
+    <h2>9. Conic Gradient</h2>
+    <p>
+        Transitions colors around a central point, similar to a color wheel.
+    </p>
+
+    <div class="box conic-gradient">
+        Conic Gradient
+    </div>
+
+
+    <!-- 10. MULTIPLE BACKGROUNDS -->
+    <h2>10. Multiple Backgrounds</h2>
+    <p>
+        Multiple background layers can be applied to one element.
+        The first image is painted on top of the following images.
+    </p>
+
+    <div class="box multiple-bg">
+        Multiple Backgrounds
+    </div>
+
+
+    <!-- 11. BACKGROUND CLIP -->
+    <h2>11. Background Clip</h2>
+    <p>
+        Controls how far the background painting extends.
+    </p>
+
+    <h3>border-box</h3>
+    <div class="box clip-border">
+        Border Box
+    </div>
+
+    <h3>padding-box</h3>
+    <div class="box clip-padding">
+        Padding Box
+    </div>
+
+    <h3>content-box</h3>
+    <div class="box clip-content">
+        Content Box
+    </div>
+
+
+    <!-- 12. BACKGROUND ORIGIN -->
+    <h2>12. Background Origin</h2>
+    <p>
+        Controls the area used as the starting reference for positioning
+        a background image.
+    </p>
+
+    <h3>border-box</h3>
+    <div class="box origin-border">
+        Origin: Border Box
+    </div>
+
+    <h3>padding-box</h3>
+    <div class="box origin-padding">
+        Origin: Padding Box
+    </div>
+
+    <h3>content-box</h3>
+    <div class="box origin-content">
+        Origin: Content Box
+    </div>
+
+
+    <!-- 13. BACKGROUND BLEND MODE -->
+    <h2>13. Background Blend Mode</h2>
+    <p>
+        Blends the background image with the background color.
+    </p>
+
+    <div class="box blend-mode">
+        Multiply Blend Mode
+    </div>
+
+
+    <!-- 14. BACKGROUND SHORTHAND -->
+    <h2>14. Background Shorthand</h2>
+    <p>
+        Multiple background settings can be combined into one declaration.
+    </p>
+
+    <div class="box bg-shorthand">
+        Background Shorthand
+    </div>
+
+
+    <!-- 15. PRACTICAL HERO SECTION -->
+    <h2>15. Practical Example: Hero Section</h2>
+    <p>
+        A hero section combines a background image, dark gradient,
+        positioning, and Flexbox to make text readable.
+    </p>
+
+    <section class="hero">
+        <h2>Explore the World</h2>
+
+        <p>
+            Discover beautiful places, experience new adventures,
+            and create unforgettable memories.
+        </p>
+
+        <button type="button">Explore Now</button>
+    </section>
+
+</body>
+</html>

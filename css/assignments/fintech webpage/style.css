@@ -7,6 +7,9 @@ body{
 
 /* navbar */
 .navbar{
+    position: fixed;
+    background-color:white;
+    width: 99vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +18,7 @@ body{
     font-family:sans-serif;
     box-shadow: 0px 0px 500px 0px rgb(217, 217, 231);
     flex-wrap: wrap;
+
    
 }
     
@@ -136,6 +140,9 @@ body{
 
 .centerbody{
     text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .centerbody h1{
@@ -146,6 +153,16 @@ body{
 .centerbody h2{
     font-weight: 200;
     word-spacing: 1.5px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainicon {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 55px;
 }
 
 .mainicon{
@@ -184,4 +201,349 @@ body{
 
 .icon h4{
     font-weight: 500;
+}
+
+
+
+/* about */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333D38;
+    
+}
+
+.about-section {
+    min-height: 100vh;
+    height: auto;
+    padding: 60px 24px;
+  
+
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    scroll-margin-top: 70px;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+/* LEFT CONTENT */
+
+.about-content {
+    flex: 1;
+    max-width: 540px;
+}
+
+.about-label {
+    display: inline-block;
+    color: #15803D;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.about-content h1 {
+    color: #142D24;
+    font-size: 44px;
+    line-height: 1.2;
+    margin: 0 0 24px;
+}
+
+.about-content p {
+    color: #69736D;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 18px;
+}
+
+.about-content .mission {
+    color: #142D24;
+    font-weight: bold;
+    margin-top: 22px;
+}
+
+.about-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 14px 24px;
+    background-color: #142D24;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: #24513E;
+    transform: translateY(-2px);
+}
+
+/* RIGHT VISUAL */
+
+.about-visual {
+    flex: 1;
+    min-width: 0;
+    max-width: 500px;
+    min-height: 400px;
+    background-color: #b2ebba;
+    box-shadow: 0px 0px 500px 20px rgb(199, 245, 201);
+    border-radius: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+ 
+.visual-decoration {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #e2f3d8;
+}
+
+.decoration-one {
+    width: 100px;
+    height: 100px;
+    top: 24px;
+    right: 28px;
+}
+
+.decoration-two {
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    left: 20px;
+    background-color: #3be065;
+}
+
+/* MAIN SAVINGS CARD */
+
+.savings-card {
+    width: 100%;
+    max-width: 350px;
+    padding: 28px;
+    background-color: #FFFFFF;
+    border: 1px solid #E3E8E3;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(20, 45, 36, 0.10);
+    position: relative;
+    z-index: 1;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.card-title {
+    color: #69736D;
+    font-size: 14px;
+}
+
+.wallet-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8F3DC;
+    border-radius: 12px;
+    color: #142D24;
+}
+
+.wallet-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.balance {
+    color: #142D24;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.balance-caption {
+    color: #69736D;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.goal-header h2 {
+    color: #142D24;
+    font-size: 15px;
+    margin: 0;
+}
+
+.goal-percentage {
+    color: #15803D;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.progress-track {
+    height: 10px;
+    width: 100%;
+    background-color: #E8EDE8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 75%;
+    height: 100%;
+    background-color: #269653;
+    border-radius: 20px;
+}
+
+.goal-caption {
+    margin-top: 12px;
+    color: #69736D;
+    font-size: 13px;
+}
+
+/* MINI CHART */
+
+.chart-card {
+    position: absolute;
+    z-index: 2;
+    right: -16px;
+    bottom: 30px;
+    width: 160px;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #E3E8E3;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(20, 45, 36, 0.10);
+}
+
+.chart-card h3 {
+    margin: 0 0 14px;
+    color: #69736D;
+    font-size: 12px;
+}
+
+.chart {
+    height: 60px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.bar {
+    flex: 1;
+    min-width: 0;
+    background-color: #B7DCC0;
+    border-radius: 4px 4px 0 0;
+}
+
+.bar:nth-child(1) {
+    height: 35%;
+}
+
+.bar:nth-child(2) {
+    height: 55%;
+}
+
+.bar:nth-child(3) {
+    height: 45%;
+}
+
+.bar:nth-child(4) {
+    height: 75%;
+}
+
+.bar:nth-child(5) {
+    height: 100%;
+    background-color: #269653;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 40px;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-content h1 {
+        font-size: 34px;
+    }
+
+    .about-visual {
+        width: 100%;
+        max-width: 500px;
+        min-height: 360px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    .savings-card {
+        padding: 22px;
+    }
+
+    .balance {
+        font-size: 30px;
+    }
+
+    .chart-card {
+        right: 8px;
+        bottom: 12px;
+        width: 135px;
+    }
+}
+
+@media (max-width: 380px) {
+    .about-content h1 {
+        font-size: 29px;
+    }
+
+    .about-visual {
+        min-height: 330px;
+        padding: 16px;
+    }
+
+    .savings-card {
+        padding: 18px;
+    }
+
+    .chart-card {
+        width: 120px;
+    }
 }

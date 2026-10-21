@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          
+        }
+
+        #navbar
+        {
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+
+           height: 70px;
+           background-color:white;
+           box-shadow: 0 0 200px 1px rgb(152, 169, 248);
+
+        }
+
+
+        #navbar h2{
+            font-size: 30px;
+            margin-left: 30px;
+
+        }
+
+        #navbar a{
+            font-size: 17px;
+            font-weight: 500;
+            color: gray;
+            padding: 5px;
+            border: 0 ;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 25px;
+            background-color: aliceblue;
+        }
+
+
+        #navbar a:hover{
+            color: black;
+        }
+
+
+        /* section 1 with cards */
+
+        .section1{
+            display: flex;
+            margin: 80px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+        }
+
+        .card{
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 300px 1px bisque;
+            height: 375px;
+            width: 370px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+        
+        }
+
+        .img-mini{
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        #img-main{
+            margin-top: 15px;
+            width:330px ;
+            height:200px;
+            object-fit: cover;
+
+        }
+
+        .card img{
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            
+        }
+
+        .text{
+            display: flex;
+            width: 330px;
+            justify-content: space-between;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        
+
+        
+        
+    </style>
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <div id="navbar">
+        <h2>Gallery</h2>
+        <div>
+            
+            <a href="#">Person</a>
+            <a href="#">Travel</a>
+            <a href="#">Nature</a>
+            <a href="#">Architecture</a>
+            <a href="#">Fashion</a>
+            <a href="#">Animals</a>
+            
+        </div>
+    </div>
+
+
+<!-- cards section -->
+    <section class="section1">
+        <div class="card">
+            <img id="img-main" src="https://images.unsplash.com/photo-1733230348670-e0d3880d98e5?q=80&w=687&auto=format&fit=crop&">
+            <div class="img-mini">
+                <img src="https://images.unsplash.com/photo-1791997902673-9e55039ff708?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1766939228501-065717002601?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1605055617664-f7b05cfb4dfc?w=500&auto=format&fit=crop&q=60">
+            </div>
+            <div class="text">
+                <span>PERSON</span> 
+                <span>15+ more</span>
+            </div>
+        </div>
+
+
+
+            <!-- card 2  -->
+        <div class="card">
+            <img id="img-main" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=687&auto=format&fit=crop&q=80">
+            <div class="img-mini">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=500&auto=format&fit=crop&q=60">
+            </div>
+            <div class="text">
+                <span>TRAVEL</span> 
+                <span>20+ more</span>
+            </div>
+        </div>
+
+
+        <!-- card 3  -->
+        <div class="card">
+            <img id="img-main" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=687&auto=format&fit=crop&q=80">
+            <div class="img-mini">
+                <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=500&auto=format&fit=crop&q=60">
+            </div>
+            <div class="text">
+                <span>NATURE</span> 
+                <span>18+ more</span>
+            </div>
+        </div>
+
+
+
+        <!-- card 4  -->
+        
+        <div class="card">
+            <img id="img-main" src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=687&auto=format&fit=crop&q=80">
+            <div class="img-mini">
+                <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60">
+                <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=500&auto=format&fit=crop&q=60">
+            </div>
+            <div class="text">
+                <span>ARCHITECTURE</span> 
+                <span>12+ more</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
