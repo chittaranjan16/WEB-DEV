@@ -1,0 +1,747 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Properties</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #fafafa;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* COMMON GRID CONTAINER */
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            padding: 10px;
+            margin: 15px 0;
+            background-color: #eeeeee;
+            border: 2px solid #555;
+            box-sizing: border-box;
+        }
+
+        /* COMMON GRID ITEM */
+        .item {
+            min-height: 80px;
+            padding: 10px;
+            background-color: lightblue;
+            border: 2px solid navy;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+
+        .item:nth-child(2) {
+            background-color: lightgreen;
+            border-color: green;
+        }
+
+        .item:nth-child(3) {
+            background-color: lightcoral;
+            border-color: darkred;
+        }
+
+        .item:nth-child(4) {
+            background-color: khaki;
+            border-color: goldenrod;
+        }
+
+        .item:nth-child(5) {
+            background-color: plum;
+            border-color: purple;
+        }
+
+        .item:nth-child(6) {
+            background-color: lightsalmon;
+            border-color: chocolate;
+        }
+
+        /* 1. GRID TEMPLATE COLUMNS */
+        .columns-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .columns-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .columns-fixed {
+            grid-template-columns: 100px 200px 100px;
+        }
+
+        .columns-mixed {
+            grid-template-columns: 100px 1fr 2fr;
+        }
+
+        /* 2. GRID TEMPLATE ROWS */
+        .rows-demo {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 60px 100px;
+        }
+
+        .rows-auto {
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 100px;
+        }
+
+        /* 3. REPEAT AND FRACTION */
+        .repeat-demo {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .fraction-demo {
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        /* 4. GAP */
+        .gap-demo {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .separate-gaps {
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 25px;
+            column-gap: 10px;
+        }
+
+        /* 5. JUSTIFY ITEMS */
+        .justify-items-demo {
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+        }
+
+        .justify-items-demo .item {
+            width: 100px;
+        }
+
+        /* 6. ALIGN ITEMS */
+        .align-items-demo {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 130px;
+            align-items: center;
+        }
+
+        .align-items-demo .item {
+            min-height: 60px;
+        }
+
+        /* 7. PLACE ITEMS */
+        .place-items-demo {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 130px;
+            place-items: center end;
+        }
+
+        .place-items-demo .item {
+            width: 100px;
+            min-height: 60px;
+        }
+
+        /* 8. JUSTIFY CONTENT */
+        .justify-content-demo {
+            grid-template-columns: repeat(3, 100px);
+            justify-content: center;
+        }
+
+        /* 9. ALIGN CONTENT */
+        .align-content-demo {
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: 60px 60px;
+            height: 250px;
+            align-content: space-between;
+        }
+
+        /* 10. GRID COLUMN SPAN */
+        .column-span-demo {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .column-span {
+            grid-column: span 2;
+        }
+
+        .column-start-end {
+            grid-column: 1 / 3;
+        }
+
+        /* 11. GRID ROW SPAN */
+        .row-span-demo {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 90px);
+        }
+
+        .row-span {
+            grid-row: span 2;
+        }
+
+        /* 12. GRID AUTO FLOW */
+        .auto-flow-row {
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-flow: row;
+        }
+
+        .auto-flow-column {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 80px);
+            grid-auto-flow: column;
+        }
+
+        /* 13. GRID AUTO COLUMNS */
+        .auto-columns-demo {
+            grid-template-columns: 150px 150px;
+            grid-auto-columns: 100px;
+            grid-auto-flow: column;
+        }
+
+        /* 14. GRID TEMPLATE AREAS */
+        .layout-demo {
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 70px 200px 70px;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+
+        .header {
+            grid-area: header;
+            background-color: steelblue;
+            color: white;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: lightgreen;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: lightyellow;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: lightsalmon;
+        }
+
+        /* 15. GRID AUTO FIT AND MINMAX */
+        .responsive-grid {
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(150px, 1fr)
+            );
+        }
+
+        /* 16. GRID AUTO FILL */
+        .auto-fill-grid {
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(150px, 1fr)
+            );
+        }
+
+        /* 17. ALIGN SELF */
+        .align-self-demo {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 140px;
+        }
+
+        .self-start {
+            align-self: start;
+        }
+
+        .self-center {
+            align-self: center;
+        }
+
+        .self-end {
+            align-self: end;
+        }
+
+        /* 18. JUSTIFY SELF */
+        .justify-self-demo {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px;
+        }
+
+        .self-left {
+            justify-self: start;
+        }
+
+        .self-middle {
+            justify-self: center;
+        }
+
+        .self-right {
+            justify-self: end;
+        }
+
+        /* 19. PLACE SELF */
+        .place-self-demo {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 130px;
+        }
+
+        .place-self-item {
+            width: 100px;
+            min-height: 60px;
+            place-self: center;
+        }
+
+        /* 20. PRACTICAL DASHBOARD */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .dashboard-card {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px #ddd;
+        }
+
+        .dashboard-card h3 {
+            margin-top: 0;
+        }
+
+        /* 21. RESPONSIVE LAYOUT */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .columns-fixed {
+                grid-template-columns: 1fr;
+            }
+
+            .layout-demo {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px 80px 180px 60px;
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+
+            .justify-content-demo,
+            .align-content-demo {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Display: Grid Properties</h1>
+
+    <p>
+        CSS Grid is a two-dimensional layout system used to arrange
+        elements into rows and columns. It helps create structured,
+        responsive web page layouts.
+    </p>
+
+
+    <!-- 1. GRID TEMPLATE COLUMNS -->
+    <h2>1. Grid Template Columns</h2>
+    <p>
+        Defines the number and width of columns in a grid.
+    </p>
+
+    <h3>Two Equal Columns</h3>
+    <div class="grid-container columns-2">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+    <h3>Three Equal Columns</h3>
+    <div class="grid-container columns-3">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <h3>Fixed Width Columns</h3>
+    <div class="grid-container columns-fixed">
+        <div class="item">100px</div>
+        <div class="item">200px</div>
+        <div class="item">100px</div>
+    </div>
+
+    <h3>Mixed Column Sizes</h3>
+    <div class="grid-container columns-mixed">
+        <div class="item">100px</div>
+        <div class="item">1fr</div>
+        <div class="item">2fr</div>
+    </div>
+
+
+    <!-- 2. GRID TEMPLATE ROWS -->
+    <h2>2. Grid Template Rows</h2>
+    <p>
+        Defines the height of explicit grid rows.
+    </p>
+
+    <h3>Different Row Heights</h3>
+    <div class="grid-container rows-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <h3>Grid Auto Rows</h3>
+    <p>
+        grid-auto-rows sets the size of rows created automatically.
+    </p>
+    <div class="grid-container rows-auto">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+
+    <!-- 3. REPEAT AND FRACTION -->
+    <h2>3. Repeat and Fraction Unit</h2>
+
+    <h3>repeat(3, 1fr)</h3>
+    <p>Creates three equal-width columns.</p>
+    <div class="grid-container repeat-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h3>1fr 2fr 1fr</h3>
+    <p>
+        The middle column receives twice the available fractional
+        space of each outer column.
+    </p>
+    <div class="grid-container fraction-demo">
+        <div class="item">1fr</div>
+        <div class="item">2fr</div>
+        <div class="item">1fr</div>
+    </div>
+
+
+    <!-- 4. GAP -->
+    <h2>4. Gap, Row Gap and Column Gap</h2>
+
+    <h3>gap: 20px</h3>
+    <div class="grid-container gap-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <h3>Separate Row and Column Gaps</h3>
+    <div class="grid-container separate-gaps">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+
+    <!-- 5. JUSTIFY ITEMS -->
+    <h2>5. Justify Items</h2>
+    <p>
+        Aligns grid items horizontally inside their grid areas
+        when the grid items do not fill those areas.
+    </p>
+
+    <div class="grid-container justify-items-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+
+    <!-- 6. ALIGN ITEMS -->
+    <h2>6. Align Items</h2>
+    <p>
+        Aligns grid items vertically inside their grid areas.
+    </p>
+
+    <div class="grid-container align-items-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+
+    <!-- 7. PLACE ITEMS -->
+    <h2>7. Place Items</h2>
+    <p>
+        Shorthand for align-items and justify-items, in that order.
+        Here, items are aligned to the bottom-right of their grid areas.
+    </p>
+
+    <div class="grid-container place-items-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+
+    <!-- 8. JUSTIFY CONTENT -->
+    <h2>8. Justify Content</h2>
+    <p>
+        Controls horizontal distribution of the entire grid
+        when the grid is narrower than its container.
+    </p>
+
+    <div class="grid-container justify-content-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+
+    <!-- 9. ALIGN CONTENT -->
+    <h2>9. Align Content</h2>
+    <p>
+        Controls vertical distribution of the entire grid
+        when there is extra vertical space.
+    </p>
+
+    <div class="grid-container align-content-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+
+    <!-- 10. GRID COLUMN -->
+    <h2>10. Grid Column</h2>
+    <p>
+        Makes an item span multiple columns or specifies
+        its starting and ending grid lines.
+    </p>
+
+    <h3>grid-column: span 2</h3>
+    <div class="grid-container column-span-demo">
+        <div class="item column-span">Span 2 Columns</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+    <h3>grid-column: 1 / 3</h3>
+    <div class="grid-container column-span-demo">
+        <div class="item column-start-end">Lines 1 to 3</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+
+    <!-- 11. GRID ROW -->
+    <h2>11. Grid Row</h2>
+    <p>
+        Makes an item span multiple rows.
+    </p>
+
+    <div class="grid-container row-span-demo">
+        <div class="item row-span">Span 2 Rows</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+
+
+    <!-- 12. GRID AUTO FLOW -->
+    <h2>12. Grid Auto Flow</h2>
+    <p>
+        Controls how automatically placed items fill the grid.
+    </p>
+
+    <h3>row</h3>
+    <div class="grid-container auto-flow-row">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <h3>column</h3>
+    <div class="grid-container auto-flow-column">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+
+    <!-- 13. GRID AUTO COLUMNS -->
+    <h2>13. Grid Auto Columns</h2>
+    <p>
+        Sets the size of columns created automatically.
+    </p>
+
+    <div class="grid-container auto-columns-demo">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+
+
+    <!-- 14. GRID TEMPLATE AREAS -->
+    <h2>14. Grid Template Areas</h2>
+    <p>
+        Gives names to grid areas so you can create a page layout
+        using readable rows and columns.
+    </p>
+
+    <div class="grid-container layout-demo">
+        <div class="item header">Header</div>
+        <div class="item sidebar">Sidebar</div>
+        <div class="item main">Main Content</div>
+        <div class="item footer">Footer</div>
+    </div>
+
+
+    <!-- 15. AUTO FIT AND MINMAX -->
+    <h2>15. Auto Fit and Minmax</h2>
+    <p>
+        Creates responsive columns that adjust to the available width.
+        Each column has a minimum width of 150px and can grow.
+    </p>
+
+    <div class="grid-container responsive-grid">
+        <div class="item">Card 1</div>
+        <div class="item">Card 2</div>
+        <div class="item">Card 3</div>
+        <div class="item">Card 4</div>
+        <div class="item">Card 5</div>
+    </div>
+
+
+    <!-- 16. AUTO FILL -->
+    <h2>16. Auto Fill</h2>
+    <p>
+        Creates as many columns as fit, retaining empty tracks
+        when space is available.
+    </p>
+
+    <div class="grid-container auto-fill-grid">
+        <div class="item">Card 1</div>
+        <div class="item">Card 2</div>
+        <div class="item">Card 3</div>
+    </div>
+
+
+    <!-- 17. ALIGN SELF -->
+    <h2>17. Align Self</h2>
+    <p>
+        Overrides align-items for an individual grid item.
+    </p>
+
+    <div class="grid-container align-self-demo">
+        <div class="item self-start">Start</div>
+        <div class="item self-center">Center</div>
+        <div class="item self-end">End</div>
+    </div>
+
+
+    <!-- 18. JUSTIFY SELF -->
+    <h2>18. Justify Self</h2>
+    <p>
+        Aligns an individual item horizontally inside its grid area.
+    </p>
+
+    <div class="grid-container justify-self-demo">
+        <div class="item self-left">Start</div>
+        <div class="item self-middle">Center</div>
+        <div class="item self-right">End</div>
+    </div>
+
+
+    <!-- 19. PLACE SELF -->
+    <h2>19. Place Self</h2>
+    <p>
+        Shorthand for align-self and justify-self.
+    </p>
+
+    <div class="grid-container place-self-demo">
+        <div class="item place-self-item">Center</div>
+        <div class="item place-self-item">Center</div>
+        <div class="item place-self-item">Center</div>
+    </div>
+
+
+    <!-- 20. PRACTICAL DASHBOARD -->
+    <h2>20. Practical Example: Dashboard Cards</h2>
+    <p>
+        Grid is useful for arranging cards into responsive columns.
+    </p>
+
+    <div class="dashboard">
+        <div class="dashboard-card">
+            <h3>Students</h3>
+            <p>Total students: 250</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Courses</h3>
+            <p>Available courses: 12</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Projects</h3>
+            <p>Completed projects: 35</p>
+        </div>
+    </div>
+
+</body>
+</html>
+```
