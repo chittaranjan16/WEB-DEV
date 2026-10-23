@@ -1,0 +1,440 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Basics</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="bg-light">
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MyWebsite</a>
+
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#home">Home</a>
+                <a class="nav-link" href="#buttons">Buttons</a>
+                <a class="nav-link" href="#cards">Cards</a>
+                <a class="nav-link" href="#forms">Forms</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container py-4">
+
+        <h1 class="text-center text-primary mb-3">
+            Bootstrap Basics
+        </h1>
+
+        <p class="text-center text-muted mb-5">
+            Learn Bootstrap through simple practical examples.
+        </p>
+
+
+        <!-- 2. TYPOGRAPHY -->
+        <h2 class="mb-3">1. Typography</h2>
+
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+
+        <p class="lead">
+            This is a lead paragraph.
+        </p>
+
+        <p class="text-muted">
+            This is muted text.
+        </p>
+
+        <p class="fw-bold">
+            This text is bold.
+        </p>
+
+        <hr>
+
+
+        <!-- 3. COLORS -->
+        <h2 class="mb-3">2. Text and Background Colors</h2>
+
+        <p class="text-primary">Primary Text</p>
+        <p class="text-success">Success Text</p>
+        <p class="text-danger">Danger Text</p>
+        <p class="text-warning">Warning Text</p>
+
+        <div class="bg-primary text-white p-3 mb-2">
+            Primary Background
+        </div>
+
+        <div class="bg-success text-white p-3 mb-2">
+            Success Background
+        </div>
+
+        <div class="bg-danger text-white p-3 mb-2">
+            Danger Background
+        </div>
+
+        <hr>
+
+
+        <!-- 4. CONTAINER -->
+        <h2 class="mb-3">3. Containers</h2>
+
+        <div class="container bg-info p-3 mb-3">
+            .container
+        </div>
+
+        <div class="container-fluid bg-warning p-3">
+            .container-fluid
+        </div>
+
+        <p class="mt-2">
+            The container has a responsive maximum width,
+            while container-fluid occupies the full available width.
+        </p>
+
+        <hr>
+
+
+        <!-- 5. GRID SYSTEM -->
+        <h2 class="mb-3">4. Grid System</h2>
+
+        <p>
+            Bootstrap uses a 12-column grid system.
+        </p>
+
+        <div class="row g-3 mb-3">
+            <div class="col-4">
+                <div class="bg-primary text-white text-center p-3">
+                    col-4
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="bg-success text-white text-center p-3">
+                    col-4
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="bg-danger text-white text-center p-3">
+                    col-4
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Responsive Columns</h3>
+
+        <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bg-info p-3 text-center">
+                    Column 1
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bg-warning p-3 text-center">
+                    Column 2
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4">
+                <div class="bg-secondary text-white p-3 text-center">
+                    Column 3
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+
+        <!-- 6. BUTTONS -->
+        <h2 id="buttons" class="mb-3">5. Buttons</h2>
+
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-dark">Dark</button>
+
+        <div class="mt-3">
+            <button class="btn btn-outline-primary">
+                Outline Button
+            </button>
+
+            <button class="btn btn-primary btn-lg">
+                Large Button
+            </button>
+
+            <button class="btn btn-secondary btn-sm">
+                Small Button
+            </button>
+        </div>
+
+        <hr class="my-4">
+
+
+        <!-- 7. SPACING -->
+        <h2 class="mb-3">6. Spacing Utilities</h2>
+
+        <div class="bg-primary text-white p-2 mb-3">
+            p-2: Padding
+        </div>
+
+        <div class="bg-success text-white p-4 mb-3">
+            p-4: More padding
+        </div>
+
+        <div class="bg-warning p-3 mt-4">
+            mt-4: Margin top
+        </div>
+
+        <div class="bg-info p-3 mx-3">
+            mx-3: Horizontal margin
+        </div>
+
+        <p class="mt-3">
+            m = margin, p = padding, t = top, b = bottom,
+            s = start, e = end, x = horizontal, y = vertical.
+        </p>
+
+        <hr class="my-4">
+
+
+        <!-- 8. ALERTS -->
+        <h2 class="mb-3">7. Alerts</h2>
+
+        <div class="alert alert-primary">
+            This is a primary alert.
+        </div>
+
+        <div class="alert alert-success">
+            Your operation was successful.
+        </div>
+
+        <div class="alert alert-danger">
+            An error occurred.
+        </div>
+
+        <div class="alert alert-warning">
+            Please check your input.
+        </div>
+
+        <hr class="my-4">
+
+
+        <!-- 9. CARDS -->
+        <h2 id="cards" class="mb-3">8. Cards</h2>
+
+        <div class="row g-3">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Java</h5>
+
+                        <p class="card-text">
+                            Learn Java programming and OOP concepts.
+                        </p>
+
+                        <a href="#home" class="btn btn-primary">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">HTML & CSS</h5>
+
+                        <p class="card-text">
+                            Learn web page structure and styling.
+                        </p>
+
+                        <a href="#home" class="btn btn-success">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">SQL</h5>
+
+                        <p class="card-text">
+                            Learn databases and SQL queries.
+                        </p>
+
+                        <a href="#home" class="btn btn-danger">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+
+        <!-- 10. TABLE -->
+        <h2 class="mb-3">9. Tables</h2>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Rahul</td>
+                        <td>Java</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Priya</td>
+                        <td>HTML & CSS</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Amit</td>
+                        <td>SQL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="my-4">
+
+
+        <!-- 11. FORMS -->
+        <h2 id="forms" class="mb-3">10. Forms</h2>
+
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter your name"
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+            </div>
+
+            <div class="mb-3">
+                <label for="course" class="form-label">
+                    Select Course
+                </label>
+
+                <select class="form-select" id="course">
+                    <option selected>Select a course</option>
+                    <option>Java</option>
+                    <option>HTML & CSS</option>
+                    <option>SQL</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </form>
+
+        <hr class="my-4">
+
+
+        <!-- 12. IMAGES -->
+        <h2 class="mb-3">11. Image Utilities</h2>
+
+        <p>
+            The rounded and fluid classes can style images.
+        </p>
+
+        <img
+            src="https://placehold.co/600x250?text=Bootstrap+Image"
+            alt="Bootstrap example"
+            class="img-fluid rounded"
+        >
+
+        <hr class="my-4">
+
+
+        <!-- 13. DISPLAY UTILITIES -->
+        <h2 class="mb-3">12. Display Utilities</h2>
+
+        <div class="d-block bg-primary text-white p-3 mb-2">
+            d-block
+        </div>
+
+        <div class="d-inline-block bg-success text-white p-3 mb-2">
+            d-inline-block
+        </div>
+
+        <div class="d-none">
+            This element is hidden.
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center
+                    bg-dark text-white p-3 mt-3">
+            <span>Left</span>
+            <span>Center</span>
+            <span>Right</span>
+        </div>
+
+        <hr class="my-4">
+
+
+        <!-- 14. FOOTER -->
+        <footer class="bg-dark text-white text-center p-3 mt-5">
+            <p class="mb-0">
+                &copy; 2026 MyWebsite | Bootstrap Basics
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>
+```
