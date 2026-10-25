@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            background-color: aqua;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 100px auto;
+            border-radius: 15px;
+            z-index: 4;
+        }
+
+        .container:hover{
+            transform: scale(1.05);
+        }
+
+        .content h1{
+             position: absolute;
+             left: -27px;
+             bottom: -90px;
+             font-size: 150px;
+             z-index: 5;
+             color: black;
+            -webkit-text-stroke: 1.5px white;
+        }
+
+        .section{
+            display: grid;
+            grid-template-columns: repeat(5,auto);
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="container" style="background-image: url('https://lh4.googleusercontent.com/yUQ0yrb5NCNE_QDmDMDDm6l7St7yI_eBIYYVYXbLCYq8IPGn0-t7Wf4fE9NUPv1iawhs8FeshGqvYPD56Pls3wdFeXxjQCqhUyQL2VcnhIckrAiXj954w5zqWHs2MIQDncPy3l0J');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>1</h1>
+            </div>
+        </div>
+        <div class="container" style="background-image: url('https://m.media-amazon.com/images/I/81vRg6RVaFL.jpg');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>2</h1>
+            </div>
+        </div>
+        <div class="container" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BxQWpV5sD1r9PWqw5pBatWsgMnyIGo6lGTVoo1-GqA&s=10');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>3</h1>
+            </div>
+        </div>
+        <div class="container" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXRyNm3YnjcCY-y8N6DdPKemR6e0nUA9x_VVRYo6M0CI6BUL3xNSEzik&s=10');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>4</h1>
+            </div>
+        </div>
+        <div class="container" style="background-image: url('https://cdn.mos.cms.futurecdn.net/vzo4SpJYAVBaimKgsRw7vA.jpg');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>5</h1>
+            </div>
+        </div>
+        <div class="container" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLcolgFn5MHb01m3t_572PqtkwOaIXrntMNqSdF9UsMxyXMK_8UWz8DCGf&s=10');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>6</h1>
+            </div>
+        </div>
+        <div class="container" style="background-image: url('https://www.tallengestore.com/cdn/shop/products/alien--covenant-the-official-collector--s-edition-cover-102516_large.jpg?v=1514033672');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>7</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

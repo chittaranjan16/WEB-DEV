@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+
+    <link href="./../../../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="./../../../bootstrap/js/bootstrap.bundle.js"></script>
+
+
+    <style>
+        body{
+            background-image: url(./bg-img.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+            
+        }
+
+
+        body::before{
+            background: linear-gradient(135deg, rgba(2, 2, 2, 0.582) 60%, rgba(182, 185, 185, 0.295));
+            z-index: 2;
+            content: "";
+            position: fixed;
+            inset: 0;
+        }
+        
+        .navbar{
+            z-index: 5;
+        }
+
+        .hero-content{
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            height: 90vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+
+        .d-flex input{
+          
+            background-color: rgba(20, 20, 20, 0.089);
+            border: 1px solid white;
+            border-radius: 7px;
+            position: relative;
+            z-index: 3;
+            font-size: 20px;
+
+            
+        }
+
+          .email-form input{
+            height: 60px;
+            width: 500px;
+        }
+
+        
+
+        .b1{
+            background-color: red;
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+            border: 0;
+            border-radius: 7px;
+            width: 200px;
+
+        }
+        .hero-content h1{
+            font-size: 70px;
+            width: 600px;
+           
+        }
+
+        .hero-content h3{
+            font-size: 23px;
+            width: 600px;
+        }
+
+
+        .email-form input.form-control::placeholder{
+            color: #ffffff !important;
+            opacity: 1 !important;
+        }
+
+        .email-form{
+            width: 100%;
+            max-width: 695px;
+            margin: 0 auto;
+        }
+
+        .email-form input{
+            flex: 1;
+            min-width: 0;
+            padding: 12px 16px;
+            background-color: rgba(20, 20, 20, 0.6);
+            color: white;
+        }
+
+        .email-form input:focus{
+            background-color: rgba(20, 20, 20, 0.8);
+            color: white;
+            opacity: 1;
+        }
+
+        .email-form button{
+            white-space: nowrap;
+        }
+
+        @media (max-width: 575.98px){
+            .email-form{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .email-form input,
+            .email-form button{
+                width: 100%;
+            }
+        }
+
+        
+
+        /* section */
+
+        body{
+            font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container1{
+            background-color: aqua;
+            width: 300px;
+            height: 400px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 100px auto;
+            border-radius: 15px;
+            z-index: 4;
+            
+            
+        }
+
+        .container1:hover{
+            transform: scale(1.05);
+             box-shadow: 0 4px 60px rgba(240, 239, 239, 0.144);
+        }
+
+        .content h1{
+             position: absolute;
+             left: -20px;
+             top: 190px;
+             font-size: 150px;
+             z-index: 5;
+             color: black;
+            -webkit-text-stroke: 1.5px white;
+        }
+
+        .section{
+            display: grid;
+            grid-template-columns: repeat(5,auto);
+            margin: 100px ;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container d-flex align-items-center  justify-content-between">
+
+            <a class="navbar-brand" href="#">
+                <img src="netflixlogo.svg" alt="Netflix" width="130" >
+            </a>
+
+
+            <div class="d-flex align-items-center gap-2">
+                <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    English
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">हिंदी</a></li>
+                </ul>
+                </div>
+
+                <button type="button" class="btn btn-danger ">Sign In</button>
+            </div> 
+    </nav>
+
+   
+    <div class="hero-content container ">
+        <h1 class="text-white fw-bold text-center ">Unlimited movies, shows, and more</h1>
+        <h3 class="text-white fw-bold text-center ">Starts at ₹149. Cancel at any time.</h3>
+        <p  class="text-white text-center">Ready to watch? Enter your email to create or restart your membership.</p>
+
+        <form class="email-form d-flex justify-content-center gap-2">
+            <div class="d-flex gap-2">
+             <input type="email" class="form-control px-3 py-3" placeholder="Email address">
+             <button class="b1" type="submit">Get Started ></button>
+        </div>
+        </form>
+        
+    </div>
+
+
+
+
+   <section>
+    <div class="section">
+        <div class="container1" style="background-image: url('https://lh4.googleusercontent.com/yUQ0yrb5NCNE_QDmDMDDm6l7St7yI_eBIYYVYXbLCYq8IPGn0-t7Wf4fE9NUPv1iawhs8FeshGqvYPD56Pls3wdFeXxjQCqhUyQL2VcnhIckrAiXj954w5zqWHs2MIQDncPy3l0J');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>1</h1>
+            </div>
+        </div>
+        <div class="container1" style="background-image: url('https://m.media-amazon.com/images/I/81vRg6RVaFL.jpg');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>2</h1>
+            </div>
+        </div>
+        <div class="container1" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BxQWpV5sD1r9PWqw5pBatWsgMnyIGo6lGTVoo1-GqA&s=10');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>3</h1>
+            </div>
+        </div>
+        <div class="container1" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiXRyNm3YnjcCY-y8N6DdPKemR6e0nUA9x_VVRYo6M0CI6BUL3xNSEzik&s=10');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>4</h1>
+            </div>
+        </div>
+        <div class="container1" style="background-image: url('https://cdn.mos.cms.futurecdn.net/vzo4SpJYAVBaimKgsRw7vA.jpg');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>5</h1>
+            </div>
+        </div>
+        <div class="container1" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLcolgFn5MHb01m3t_572PqtkwOaIXrntMNqSdF9UsMxyXMK_8UWz8DCGf&s=10');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>6</h1>
+            </div>
+        </div>
+        <div class="container1" style="background-image: url('https://www.tallengestore.com/cdn/shop/products/alien--covenant-the-official-collector--s-edition-cover-102516_large.jpg?v=1514033672');">
+            <div class="img"></div>
+            <div class="content">
+                <h1>7</h1>
+            </div>
+        </div>
+    </div>
+   </section>
+    
+
+    
+    
+   
+
+</body>
+</html>

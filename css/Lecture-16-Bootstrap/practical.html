@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap Grid Practice</title>
+
+    <link href="./../../bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container-fluid p-3">
+
+        <!-- 1. TEXT AND BUTTON -->
+        <h1 class="text-danger">Bootstrap</h1>
+
+        <button type="button" class="btn btn-success mb-3">
+            Success
+        </button>
+
+
+        <!-- 2. NAVBAR -->
+        <nav class="navbar bg-primary mb-4" data-bs-theme="dark">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">
+                    Navbar
+                </a>
+
+                <form class="d-flex" role="search">
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                    >
+
+                    <button class="btn btn-outline-light" type="submit">
+                        Search
+                    </button>
+                </form>
+
+            </div>
+        </nav>
+
+
+        <!-- 3. PARAGRAPH -->
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Fugiat vitae dolore, repellat harum repudiandae nesciunt,
+            maxime facilis sequi deleniti reiciendis aliquam dolor enim.
+        </p>
+
+        <hr>
+
+
+        <!-- 4. COL-1: 12 ITEMS -->
+        <h2>col-1: Twelve Columns</h2>
+
+        <div class="row g-1 mb-4">
+            <div class="col-1 bg-danger text-white">1</div>
+            <div class="col-1 bg-success text-white">2</div>
+            <div class="col-1 bg-warning">3</div>
+            <div class="col-1 bg-dark text-white">4</div>
+            <div class="col-1 bg-danger text-white">5</div>
+            <div class="col-1 bg-success text-white">6</div>
+            <div class="col-1 bg-warning">7</div>
+            <div class="col-1 bg-dark text-white">8</div>
+            <div class="col-1 bg-danger text-white">9</div>
+            <div class="col-1 bg-success text-white">10</div>
+            <div class="col-1 bg-warning">11</div>
+            <div class="col-1 bg-dark text-white">12</div>
+        </div>
+
+
+        <!-- 5. COL-2: SIX ITEMS -->
+        <h2>col-2: Six Columns</h2>
+
+        <div class="row g-1 mb-4">
+            <div class="col-2 bg-danger text-white">1</div>
+            <div class="col-2 bg-success text-white">2</div>
+            <div class="col-2 bg-warning">3</div>
+            <div class="col-2 bg-dark text-white">4</div>
+            <div class="col-2 bg-danger text-white">5</div>
+            <div class="col-2 bg-success text-white">6</div>
+        </div>
+
+
+        <!-- 6. COL-3: FOUR ITEMS -->
+        <h2>col-3: Four Columns</h2>
+
+        <div class="row g-1 mb-4">
+            <div class="col-3 bg-danger text-white">1</div>
+            <div class="col-3 bg-success text-white">2</div>
+            <div class="col-3 bg-warning">3</div>
+            <div class="col-3 bg-dark text-white">4</div>
+        </div>
+
+
+        <!-- 7. COL-4: THREE ITEMS -->
+        <h2>col-4: Three Columns</h2>
+
+        <div class="row g-1 mb-4">
+            <div class="col-4 bg-danger text-white">1</div>
+            <div class="col-4 bg-success text-white">2</div>
+            <div class="col-4 bg-warning">3</div>
+        </div>
+
+
+        <!-- 8. UNEQUAL COLUMNS -->
+        <h2>col-2 + col-10</h2>
+
+        <div class="row g-1 mb-4">
+            <div class="col-2 bg-danger text-white">2</div>
+            <div class="col-10 bg-success text-white">10</div>
+        </div>
+
+
+        <!-- 9. HALF AND HALF -->
+        <h2>col-6 + col-6</h2>
+
+        <div class="row g-1 mb-4">
+            <div class="col-6 bg-danger text-white">50%</div>
+            <div class="col-6 bg-success text-white">50%</div>
+        </div>
+
+
+        <!-- 10. AUTOMATIC COLUMNS -->
+        <h2>Equal Automatic Columns</h2>
+
+        <div class="row g-1 mb-4">
+            <div class="col bg-danger text-white">Item 1</div>
+            <div class="col bg-success text-white">Item 2</div>
+        </div>
+
+        <div class="row g-1 mb-4">
+            <div class="col bg-danger text-white">Item 1</div>
+            <div class="col bg-success text-white">Item 2</div>
+            <div class="col bg-warning">Item 3</div>
+        </div>
+
+
+        <!-- 11. RESPONSIVE GRID -->
+        <h2>Responsive Columns</h2>
+
+        <div class="row g-2">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bg-danger text-white p-3">
+                    Item 1
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bg-success text-white p-3">
+                    Item 2
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bg-warning p-3">
+                    Item 3
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
