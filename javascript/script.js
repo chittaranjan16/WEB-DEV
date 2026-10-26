@@ -74,3 +74,16 @@ let age = 21;
 if (age >= 18) {
     console.log("Adult");
 }
+
+
+var n1 = 21;
+console.log(n1);
+
+var n1 = 231;
+console.log(n1);
+
+
+function name1(){
+    console.log("hello")
+}
+name1()

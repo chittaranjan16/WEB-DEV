@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Notes — Variables</title>
+  <style>
+    :root {
+      --ink: #182230;
+      --muted: #5d6b7b;
+      --line: #dce3eb;
+      --paper: #ffffff;
+      --page: #f3f6fa;
+      --blue: #2459a9;
+      --blue-light: #eaf2ff;
+      --green: #147d50;
+      --green-light: #e9f8f0;
+      --amber: #8b5a00;
+      --amber-light: #fff5dc;
+      --red: #a52a2a;
+      --red-light: #fff0f0;
+      --code: #111827;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65;
+    }
+    .page { max-width: 1050px; margin: 0 auto; padding: 28px 18px 56px; }
+    header {
+      background: linear-gradient(135deg, #173b73, #2f6dc4);
+      color: white;
+      padding: 34px clamp(20px, 5vw, 48px);
+      border-radius: 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 28px #183b6b20;
+    }
+    header .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; opacity: .85; font-weight: 700; }
+    h1 { margin: 5px 0 8px; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+    header p { margin: 0; max-width: 720px; color: #e7efff; }
+    section, .note-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px clamp(16px, 3vw, 28px);
+      margin: 18px 0;
+      box-shadow: 0 4px 14px #18223008;
+    }
+    h2 { margin: 0 0 12px; font-size: 1.45rem; }
+    h3 { margin: 20px 0 8px; font-size: 1.08rem; }
+    p { margin: 8px 0; }
+    .lead { font-size: 1.06rem; }
+    .callout { padding: 13px 15px; border-radius: 10px; margin: 12px 0; }
+    .info { background: var(--blue-light); border-left: 4px solid var(--blue); }
+    .good { background: var(--green-light); border-left: 4px solid var(--green); }
+    .warn { background: var(--amber-light); border-left: 4px solid #d69b20; }
+    .danger { background: var(--red-light); border-left: 4px solid var(--red); }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
+    code { background: #eef2f7; padding: 2px 5px; border-radius: 5px; font-size: .94em; }
+    pre {
+      background: var(--code); color: #e5edf8; padding: 16px;
+      border-radius: 10px; overflow-x: auto; line-height: 1.55; font-size: .91rem;
+      margin: 10px 0;
+    }
+    pre code { background: transparent; color: inherit; padding: 0; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: #f0f4f9; }
+    .table-wrap { overflow-x: auto; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 5px 0; }
+    .tag { display: inline-block; font-size: .78rem; font-weight: 750; padding: 3px 8px; border-radius: 999px; background: #e8edf5; color: #334155; }
+    .demo-controls { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; }
+    button {
+      border: 0; border-radius: 8px; padding: 10px 14px; cursor: pointer;
+      background: var(--blue); color: white; font-weight: 650; font-size: .95rem;
+    }
+    button:hover { filter: brightness(1.08); }
+    button.secondary { background: #e6edf7; color: #173b73; }
+    #demoOutput { min-height: 54px; white-space: pre-wrap; background: #101827; color: #d7fbe6; border-radius: 9px; padding: 14px; font-family: ui-monospace, monospace; }
+    .small { color: var(--muted); font-size: .92rem; }
+    .checklist label { display: block; margin: 8px 0; }
+    footer { text-align: center; color: var(--muted); padding-top: 22px; font-size: .9rem; }
+    @media print {
+      body { background: white; }
+      .page { max-width: none; padding: 0; }
+      header, section, .note-card { box-shadow: none; break-inside: avoid; }
+      .demo-controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="eyebrow">JavaScript • Class Notes + Extra Revision</div>
+      <h1>Variables</h1>
+      <p>A beginner-friendly guide to declaring, assigning, and using variables with <strong>var</strong>, <strong>let</strong>, and <strong>const</strong>.</p>
+    </header>
+
+    <section>
+      <h2>1. What is a variable?</h2>
+      <p class="lead">A <strong>variable</strong> is a named place in a program that lets us store a value and use it later.</p>
+      <div class="callout info"><strong>Analogy:</strong> Think of a variable as a labelled box. The label is the variable name, and the value is what you keep inside the box.</div>
+      <pre><code>let age = 20;
+console.log(age); // 20</code></pre>
+      <ul>
+        <li><code>let</code> — keyword used to declare the variable.</li>
+        <li><code>age</code> — variable name (identifier).</li>
+        <li><code>=</code> — assignment operator; it assigns the value on the right to the variable on the left.</li>
+        <li><code>20</code> — value stored in the variable.</li>
+        <li><code>;</code> — ends the statement. JavaScript can insert semicolons automatically in many cases, but writing them consistently is a good habit.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Declaration, initialization, and reassignment</h2>
+      <pre><code>let score;       // Declaration: create the variable
+score = 10;      // Assignment: give it a value
+score = 15;      // Reassignment: change its value
+console.log(score); // 15</code></pre>
+      <p><strong>Initialization</strong> means giving a variable its first value, usually while declaring it:</p>
+      <pre><code>let score = 10;  // Declaration + initialization</code></pre>
+      <div class="callout warn">A variable declared with <code>let</code> but not yet assigned a value contains <code>undefined</code>. A <code>const</code> variable must receive a value when it is declared.</div>
+    </section>
+
+    <section>
+      <h2>3. The three variable keywords</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Keyword</th><th>Can reassign?</th><th>Can redeclare in the same scope?</th><th>Scope</th><th>Guidance</th></tr></thead>
+          <tbody>
+            <tr><td><code>var</code></td><td>Yes</td><td>Yes</td><td>Function scope (or global scope)</td><td>Older JavaScript; understand it, but avoid it in most modern code.</td></tr>
+            <tr><td><code>let</code></td><td>Yes</td><td>No</td><td>Block scope</td><td>Use when the variable's value needs to change.</td></tr>
+            <tr><td><code>const</code></td><td>No (binding cannot be reassigned)</td><td>No</td><td>Block scope</td><td>Prefer by default when you will not reassign the variable.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">Historical note: <code>var</code> existed in older JavaScript. <code>let</code> and <code>const</code> were introduced in ECMAScript 2015 (ES6).</p>
+
+      <h3>Example A — let</h3>
+      <pre><code>let number = 10;
+number = 45;              // Allowed: reassignment
+console.log(number);      // 45
+
+// let number = 50;       // Error in the same scope: redeclaration</code></pre>
+
+      <h3>Example B — var</h3>
+      <pre><code>var amount = 10;
+amount = 100;             // Allowed: reassignment
+var amount = 200;         // Allowed, but often confusing
+console.log(amount);      // 200</code></pre>
+
+      <h3>Example C — const</h3>
+      <pre><code>const taxRate = 0.18;
+console.log(taxRate);     // 0.18
+
+// taxRate = 0.20;        // TypeError: cannot reassign a const
+// const taxRate = 0.25;  // SyntaxError: redeclaration in same scope
+// const city;            // SyntaxError: const needs an initial value</code></pre>
+      <div class="callout info"><strong>Important detail:</strong> <code>const</code> prevents reassignment of the variable binding. If it refers to an object or array, the object's contents can still be changed; the variable cannot be pointed to a different object.</div>
+      <pre><code>const colors = ["red", "blue"];
+colors.push("green");       // Allowed: modifies the array
+// colors = ["black"];      // Not allowed: reassigns the variable
+console.log(colors);</code></pre>
+    </section>
+
+    <section>
+      <h2>4. Your class example — corrected and explained</h2>
+      <p>JavaScript does not require a <code>main()</code> function. You can create one yourself and call it, as shown here.</p>
+      <pre><code>function main() {
+  let n;
+  n = 10;
+  console.log(n); // 10
+
+  var a;
+  a = 45;
+  console.log(a); // 45
+
+  const b = 15;
+  console.log(b); // 15
+}
+
+main();</code></pre>
+      <p>The three outputs appear on separate lines: <code>10</code>, <code>45</code>, and <code>15</code>.</p>
+      <p class="small">When running JavaScript in a browser, open Developer Tools → Console to see <code>console.log()</code> output. In this page, the buttons below also show sample output directly.</p>
+    </section>
+
+    <section>
+      <h2>5. Redeclaration vs reassignment</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Action</th><th>Meaning</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Declaration</td><td>Create a variable binding.</td><td><code>let count;</code></td></tr>
+            <tr><td>Initialization</td><td>Give it its first value.</td><td><code>let count = 1;</code></td></tr>
+            <tr><td>Reassignment</td><td>Give an existing variable a new value.</td><td><code>count = 2;</code></td></tr>
+            <tr><td>Redeclaration</td><td>Declare the same name again in the same scope.</td><td><code>let count = 1; let count = 2;</code> — error</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>// let: reassignment is okay
+let n1 = 12;
+n1 = 30;
+console.log(n1); // 30
+
+// let: redeclaration in the same scope is not okay
+// let n1 = 40; // SyntaxError</code></pre>
+      <div class="callout good">Remember: <strong><code>let</code> = reassign allowed, same-scope redeclaration not allowed.</strong></div>
+    </section>
+
+    <section>
+      <h2>6. Why not create a variable without a keyword?</h2>
+      <p>In non-strict, older-style JavaScript, assigning to an undeclared name may accidentally create a global variable. This is a bug-prone practice and should be avoided.</p>
+      <pre><code>function main() {
+  "use strict";
+  // x = 12; // ReferenceError: x was never declared
+  let x = 12;
+  console.log(x);
+}
+main();</code></pre>
+      <div class="callout danger"><strong>Strict mode:</strong> <code>"use strict";</code> makes assigning to an undeclared variable an error. Put the directive at the beginning of a script or function. Modern JavaScript modules are strict by default.</div>
+      <p>Best practice: always declare variables with <code>const</code> or <code>let</code>. Use <code>var</code> mainly when reading older code or when a specific legacy requirement calls for it.</p>
+    </section>
+
+    <section>
+      <h2>7. Scope: where can a variable be used?</h2>
+      <p><strong>Scope</strong> means the part of the program where a variable is accessible.</p>
+      <h3>Block scope: let and const</h3>
+      <pre><code>if (true) {
+  let message = "Hello";
+  const year = 2026;
+  console.log(message); // Hello
+}
+// console.log(message); // ReferenceError: outside its block</code></pre>
+      <h3>var is not block-scoped</h3>
+      <pre><code>if (true) {
+  var oldStyle = "I can be accessed outside this block";
+}
+console.log(oldStyle); // Works (in this example)</code></pre>
+      <p class="small">A function still creates a scope for <code>var</code>. This difference is one reason <code>let</code> and <code>const</code> are safer for everyday code.</p>
+    </section>
+
+    <section>
+      <h2>8. Variable naming rules</h2>
+      <ul>
+        <li>Names can contain letters, digits, <code>_</code>, and <code>$</code>.</li>
+        <li>A name cannot start with a digit.</li>
+        <li>Names cannot be reserved keywords such as <code>let</code>, <code>const</code>, or <code>if</code>.</li>
+        <li>JavaScript is case-sensitive: <code>age</code>, <code>Age</code>, and <code>AGE</code> are different names.</li>
+        <li>Use descriptive names and usually <strong>camelCase</strong>: <code>studentName</code>, <code>totalPrice</code>, <code>isLoggedIn</code>.</li>
+      </ul>
+      <pre><code>let studentName = "Asha"; // Good
+let totalMarks = 450;     // Good
+// let 2marks = 20;        // Invalid: starts with a digit
+// let let = 5;            // Invalid: reserved keyword
+let user_name = "Ravi";   // Valid, though camelCase is common in JS</code></pre>
+    </section>
+
+    <section>
+      <h2>9. JavaScript is dynamically typed</h2>
+      <p>You do not write a data type such as <code>int</code> when declaring a normal JavaScript variable. The value has a type, and a <code>let</code> variable can later hold a value of another type.</p>
+      <pre><code>let value = 10;
+console.log(typeof value); // "number"
+
+value = "ten";
+console.log(typeof value); // "string"</code></pre>
+      <p>Common primitive value types include <code>number</code>, <code>string</code>, <code>boolean</code>, <code>undefined</code>, <code>bigint</code>, <code>symbol</code>, and <code>null</code> (with a historical quirk: <code>typeof null</code> returns <code>"object"</code>).</p>
+    </section>
+
+    <section>
+      <h2>10. Try the examples</h2>
+      <p>Click a button to see the output. These examples run in the page's internal JavaScript.</p>
+      <div class="demo-controls">
+        <button type="button" onclick="runDemo('basic')">Run basic example</button>
+        <button type="button" onclick="runDemo('let')">Run let example</button>
+        <button type="button" onclick="runDemo('types')">Run typeof example</button>
+        <button type="button" class="secondary" onclick="clearDemo()">Clear output</button>
+      </div>
+      <div id="demoOutput" aria-live="polite">Output will appear here.</div>
+    </section>
+
+    <section>
+      <h2>11. Common mistakes to avoid</h2>
+      <ul>
+        <li>Using <code>const</code> without an initial value.</li>
+        <li>Trying to redeclare a <code>let</code> or <code>const</code> name in the same scope.</li>
+        <li>Trying to reassign a <code>const</code> variable.</li>
+        <li>Forgetting that names are case-sensitive.</li>
+        <li>Assigning to a variable before declaring it.</li>
+        <li>Assuming <code>const</code> makes an array or object completely immutable.</li>
+        <li>Using <code>var</code> without understanding its function scope and redeclaration behavior.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>12. Practice questions — try before checking your notes</h2>
+      <ol>
+        <li>Declare a variable named <code>city</code>, assign it your city, and print it.</li>
+        <li>Declare <code>let score = 50</code>, change it to <code>75</code>, and print the result.</li>
+        <li>Declare a constant named <code>birthYear</code> and print it.</li>
+        <li>What is the difference between declaration and initialization?</li>
+        <li>Which keywords allow reassignment? Which allow same-scope redeclaration?</li>
+        <li>Predict the output: <code>let x = 5; x = 8; console.log(x);</code></li>
+        <li>Why does <code>const item;</code> produce an error?</li>
+        <li>What happens when a <code>let</code> variable is declared inside an <code>if</code> block and accessed outside it?</li>
+        <li>Find the naming mistake: <code>let 1stName = "Sam";</code></li>
+        <li>What does <code>typeof "hello"</code> return?</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>13. Quick revision checklist</h2>
+      <div class="checklist">
+        <label><input type="checkbox"> I can explain what a variable is.</label>
+        <label><input type="checkbox"> I understand declaration, initialization, and reassignment.</label>
+        <label><input type="checkbox"> I know the differences between <code>var</code>, <code>let</code>, and <code>const</code>.</label>
+        <label><input type="checkbox"> I understand why undeclared variables are a bad practice.</label>
+        <label><input type="checkbox"> I know basic naming rules and block scope.</label>
+        <label><input type="checkbox"> I can predict the output of simple variable examples.</label>
+      </div>
+      <div class="callout info"><strong>Interview-ready summary:</strong> Prefer <code>const</code> when you do not need to reassign a variable and <code>let</code> when you do. Both are block-scoped and cannot be redeclared in the same scope. <code>var</code> is function-scoped and permits redeclaration. Always declare variables explicitly.</div>
+    </section>
+
+    <footer>JavaScript Notes • Topic 1: Variables • Made for class revision and practice</footer>
+  </main>
+
+  <script>
+    // All demonstration JavaScript is kept in this internal script tag.
+    function runDemo(example) {
+      const output = document.getElementById("demoOutput");
+      let lines = [];
+
+      if (example === "basic") {
+        let n;
+        n = 10;
+        lines.push(String(n));
+
+        var a;
+        a = 45;
+        lines.push(String(a));
+
+        const b = 15;
+        lines.push(String(b));
+      } else if (example === "let") {
+        let number = 12;
+        number = 30;
+        lines.push(String(number));
+        lines.push("Reassignment worked: let allows a new value.");
+      } else if (example === "types") {
+        let value = 10;
+        lines.push(typeof value); // number
+        value = "ten";
+        lines.push(typeof value); // string
+      }
+
+      output.textContent = lines.join("\\n");
+    }
+
+    function clearDemo() {
+      document.getElementById("demoOutput").textContent = "Output will appear here.";
+    }
+  </script>
+</body>
+</html>
