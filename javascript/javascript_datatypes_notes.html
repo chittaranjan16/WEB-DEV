@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Types - Notes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.65;
+            color: #263238;
+            background: #f3f6fb;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #173b70;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 32px;
+            padding-bottom: 8px;
+            color: #1757a6;
+            border-bottom: 2px solid #dce8f8;
+        }
+
+        h3 {
+            color: #254f7b;
+        }
+
+        .intro, .note, .warning, .tip {
+            padding: 14px 16px;
+            margin: 16px 0;
+            border-radius: 8px;
+        }
+
+        .intro {
+            background: #edf5ff;
+            border-left: 5px solid #2d75c7;
+        }
+
+        .note {
+            background: #eef9f0;
+            border-left: 5px solid #3b9955;
+        }
+
+        .warning {
+            background: #fff3e8;
+            border-left: 5px solid #e58b2b;
+        }
+
+        .tip {
+            background: #f4efff;
+            border-left: 5px solid #8661c5;
+        }
+
+        code {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background: #edf0f4;
+            font-family: Consolas, "Courier New", monospace;
+        }
+
+        pre {
+            overflow-x: auto;
+            padding: 18px;
+            border-radius: 8px;
+            color: #f4f7fb;
+            background: #182334;
+            line-height: 1.55;
+        }
+
+        pre code {
+            padding: 0;
+            color: inherit;
+            background: transparent;
+        }
+
+        table {
+            width: 100%;
+            margin: 18px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 11px;
+            text-align: left;
+            border: 1px solid #d8e0eb;
+            vertical-align: top;
+        }
+
+        th {
+            color: #173b70;
+            background: #eaf2fc;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8faff;
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 9px;
+            margin: 3px;
+            border-radius: 20px;
+            color: #174a86;
+            background: #e4efff;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: 35px;
+            padding-top: 15px;
+            color: #5d6a79;
+            text-align: center;
+            border-top: 1px solid #dce3ed;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 18px;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 0.92rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>JavaScript Data Types</h1>
+
+        <p class="intro">
+            <strong>Definition:</strong> A data type describes the kind of value a variable stores.
+            JavaScript is dynamically typed, so a variable can hold values of different types at different times.
+        </p>
+
+        <h2>1. Types of Data Types</h2>
+        <p>JavaScript data types are commonly grouped into two categories:</p>
+        <ul>
+            <li><strong>Primitive types:</strong> Number, String, Boolean, Undefined, Null, BigInt, Symbol.</li>
+            <li><strong>Non-primitive/reference type:</strong> Objects. Arrays and functions are also objects or object-like values in JavaScript.</li>
+        </ul>
+
+        <h2>2. Your Original Examples</h2>
+        <pre><code>let n = 10;
+            console.log(n, typeof n);       // 10 "number"
+
+            let str = "hello";
+            console.log(str, typeof str);   // hello "string"
+
+            let str1 = true;
+            console.log(str1, typeof str1); // true "boolean"
+
+            let str2;
+            console.log(str2, typeof str2); // undefined "undefined"
+
+            let str3 = null;
+            console.log(str3, typeof str3); // null "object"
+
+            let str4 = 123n;
+            console.log(str4, typeof str4); // 123n "bigint"</code></pre>
+
+        <div class="tip">
+            <strong>Naming tip:</strong> <code>str1</code> contains a Boolean, not a string.
+            Use meaningful names such as <code>isActive</code> for Boolean values.
+        </div>
+
+        <h2>3. Primitive Data Types</h2>
+
+        <h3>3.1 Number</h3>
+        <p>Used for integers and decimal numbers. JavaScript's regular <code>number</code> type also includes special values such as <code>NaN</code> and <code>Infinity</code>.</p>
+        <pre><code>let age = 21;
+let price = 99.50;
+let result = 10 / 0;
+
+console.log(typeof age);    // "number"
+console.log(typeof price);  // "number"
+console.log(result);        // Infinity
+console.log(typeof NaN);    // "number"</code></pre>
+
+        <h3>3.2 String</h3>
+        <p>Used to store text. Strings can use single quotes, double quotes, or backticks.</p>
+        <pre><code>let firstName = "Ravi";
+let city = 'Bengaluru';
+let message = `Hello, ${firstName}!`;
+
+console.log(typeof firstName); // "string"
+console.log(message);          // Hello, Ravi!</code></pre>
+        <p>Backticks allow template literals, including interpolation with <code>${...}</code>.</p>
+
+        <h3>3.3 Boolean</h3>
+        <p>Represents either <code>true</code> or <code>false</code>. Often used in conditions and comparisons.</p>
+        <pre><code>let isLoggedIn = true;
+let hasPermission = false;
+
+console.log(typeof isLoggedIn); // "boolean"
+console.log(10 > 5);             // true</code></pre>
+
+        <h3>3.4 Undefined</h3>
+        <p>A variable declared without an assigned value has the value <code>undefined</code>.</p>
+        <pre><code>let score;
+
+console.log(score);         // undefined
+console.log(typeof score);  // "undefined"</code></pre>
+        <p>JavaScript can also return <code>undefined</code> when a property or function result is absent.</p>
+
+        <h3>3.5 Null</h3>
+        <p><code>null</code> represents an intentional absence of a value.</p>
+        <pre><code>let selectedUser = null;
+
+console.log(selectedUser);        // null
+console.log(typeof selectedUser); // "object"</code></pre>
+        <div class="warning">
+            <strong>Important:</strong> <code>typeof null</code> returns <code>"object"</code> because of a historical JavaScript quirk.
+            It does not mean that <code>null</code> is an object. Check it with <code>value === null</code>.
+        </div>
+
+        <h3>3.6 BigInt</h3>
+        <p>Used for integers larger than the safe range of the regular Number type. Add <code>n</code> to an integer literal.</p>
+        <pre><code>let bigNumber = 123456789012345678901234567890n;
+
+console.log(bigNumber);
+console.log(typeof bigNumber); // "bigint"</code></pre>
+        <div class="warning">
+            Do not mix BigInt and Number in arithmetic directly. Convert deliberately when appropriate.
+        </div>
+        <pre><code>// 10n + 5n; // Works: 15n
+// 10n + 5;  // TypeError</code></pre>
+
+        <h3>3.7 Symbol</h3>
+        <p>A Symbol creates a unique primitive value, often used as a unique object property key.</p>
+        <pre><code>let id1 = Symbol("id");
+let id2 = Symbol("id");
+
+console.log(id1 === id2); // false
+console.log(typeof id1);  // "symbol"</code></pre>
+
+        <h2>4. Non-Primitive / Reference Type: Object</h2>
+        <p>Objects can group related data using key-value pairs. Arrays and functions are also objects in JavaScript, although functions have their own <code>typeof</code> result.</p>
+
+        <h3>Object</h3>
+        <pre><code>let student = {
+    name: "Ravi",
+    age: 21
+};
+
+console.log(student.name);       // Ravi
+console.log(typeof student);     // "object"</code></pre>
+
+        <h3>Array</h3>
+        <pre><code>let marks = [80, 90, 75];
+
+console.log(marks[0]);        // 80
+console.log(typeof marks);     // "object"
+console.log(Array.isArray(marks)); // true</code></pre>
+        <p>Use <code>Array.isArray()</code> to reliably check whether a value is an array.</p>
+
+        <h3>Function</h3>
+        <pre><code>function greet() {
+    console.log("Hello!");
+}
+
+greet();
+console.log(typeof greet); // "function"</code></pre>
+
+        <h2>5. Quick Reference Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Example</th>
+                    <th><code>typeof</code> result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Number</td><td><code>10</code></td><td><code>"number"</code></td></tr>
+                <tr><td>String</td><td><code>"hello"</code></td><td><code>"string"</code></td></tr>
+                <tr><td>Boolean</td><td><code>true</code></td><td><code>"boolean"</code></td></tr>
+                <tr><td>Undefined</td><td><code>let x;</code></td><td><code>"undefined"</code></td></tr>
+                <tr><td>Null</td><td><code>null</code></td><td><code>"object"</code> (quirk)</td></tr>
+                <tr><td>BigInt</td><td><code>123n</code></td><td><code>"bigint"</code></td></tr>
+                <tr><td>Symbol</td><td><code>Symbol("id")</code></td><td><code>"symbol"</code></td></tr>
+                <tr><td>Object</td><td><code>{ name: "Ravi" }</code></td><td><code>"object"</code></td></tr>
+                <tr><td>Array</td><td><code>[1, 2, 3]</code></td><td><code>"object"</code></td></tr>
+                <tr><td>Function</td><td><code>function greet() {}</code></td><td><code>"function"</code></td></tr>
+            </tbody>
+        </table>
+
+        <h2>6. Dynamic Typing</h2>
+        <p>In JavaScript, a variable declared with <code>let</code> can be reassigned a value of a different type.</p>
+        <pre><code>let value = 100;
+console.log(typeof value); // "number"
+
+value = "one hundred";
+console.log(typeof value); // "string"
+
+value = true;
+console.log(typeof value); // "boolean"</code></pre>
+        <div class="note">
+            The variable does not have one fixed type. The value currently stored determines its type.
+        </div>
+
+        <h2>7. Common Mistakes and Important Rules</h2>
+        <ul>
+            <li><code>typeof "25"</code> returns <code>"string"</code>, while <code>typeof 25</code> returns <code>"number"</code>.</li>
+            <li><code>typeof null</code> returns <code>"object"</code> due to a historical quirk.</li>
+            <li><code>typeof []</code> returns <code>"object"</code>; use <code>Array.isArray([])</code> to test arrays.</li>
+            <li><code>undefined</code> often means a value has not been assigned; <code>null</code> usually means an intentional empty value.</li>
+            <li>JavaScript is case-sensitive: <code>true</code> is valid, but <code>True</code> is not the Boolean literal.</li>
+            <li><code>typeof</code> returns a string, for example <code>"number"</code> with quotation marks.</li>
+            <li>Use <code>===</code> for strict comparison when you do not want automatic type conversion.</li>
+        </ul>
+
+        <h2>8. Practice Questions (Try Before Checking)</h2>
+        <p>Predict the output of each statement. Write your answers in your notebook, then run the code in the browser console.</p>
+        <ol>
+            <li><code>console.log(typeof 45.7);</code></li>
+            <li><code>console.log(typeof "true");</code></li>
+            <li><code>console.log(typeof false);</code></li>
+            <li><code>console.log(typeof undefined);</code></li>
+            <li><code>console.log(typeof null);</code></li>
+            <li><code>console.log(typeof [10, 20]);</code></li>
+            <li><code>console.log(Array.isArray([10, 20]));</code></li>
+            <li><code>console.log(typeof 999n);</code></li>
+            <li><code>let x = 5; x = "five"; console.log(typeof x);</code></li>
+            <li><code>console.log(typeof NaN);</code></li>
+        </ol>
+
+        <h2>9. Mini Challenge</h2>
+        <p>Create variables for a student's name, age, whether they passed, an unassigned variable, a null value, a BigInt value, an array of marks, and a student object.</p>
+        <p>Print each value and its type using <code>console.log(value, typeof value)</code>. For the array, also check it with <code>Array.isArray()</code>.</p>
+
+        <h2>10. Quick Revision</h2>
+        <p>
+            <span class="badge">Number</span>
+            <span class="badge">String</span>
+            <span class="badge">Boolean</span>
+            <span class="badge">Undefined</span>
+            <span class="badge">Null</span>
+            <span class="badge">BigInt</span>
+            <span class="badge">Symbol</span>
+            <span class="badge">Object</span>
+        </p>
+        <ul>
+            <li>JavaScript has seven primitive types.</li>
+            <li>Objects are used to group data; arrays and functions are related object types.</li>
+            <li><code>typeof</code> helps identify a value's type, but has special cases.</li>
+            <li>JavaScript is dynamically typed.</li>
+        </ul>
+
+        <footer>
+            JavaScript Notes • Data Types • Beginner to Intermediate
+        </footer>
+    </main>
+</body>
+</html>
