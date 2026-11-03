@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 - JavaScript Operators</title>
+<script>
+// 04 - JavaScript Operators: practical examples
+
+console.log("1. Arithmetic operators:");
+console.log(10 + 5, 10 - 5, 10 * 5, 10 / 5, 10 % 3, 2 ** 3);
+
+console.log("2. Assignment operators:");
+let score = 10;
+score += 5;
+score *= 2;
+console.log(score); // 30
+
+console.log("3. Comparison operators:");
+console.log(10 > 5);       // true
+console.log(10 === "10");  // false
+console.log(10 == "10");   // true
+
+console.log("4. Logical operators:");
+console.log(true && false); // false
+console.log(true || false); // true
+console.log(!true);         // false
+
+console.log("5. Unary operators:");
+let value = 5;
+console.log(typeof value); // number
+console.log(-value);       // -5
+console.log(+ "25");       // 25
+
+console.log("6. Increment and decrement:");
+let count = 5;
+console.log(count++); // 5 (post-increment)
+console.log(count);   // 6
+console.log(++count); // 7 (pre-increment)
+console.log(count--); // 7 (post-decrement)
+console.log(--count); // 5 (pre-decrement)
+
+console.log("7. Ternary operator:");
+let age = 20;
+let message = age >= 18 ? "Adult" : "Minor";
+console.log(message);
+
+console.log("8. Operator precedence:");
+console.log(10 + 2 * 3);   // 16
+console.log((10 + 2) * 3); // 36
+</script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 0 20px;
+    color: #222;
+    background-color: #ffffff;
+}
+h1 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 8px;
+}
+h2 {
+    color: #285f8f;
+    margin-top: 28px;
+}
+p {
+    margin: 8px 0;
+}
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 12px;
+    overflow-x: auto;
+}
+code {
+    font-family: Consolas, monospace;
+    color: #a31515;
+}
+pre code {
+    color: #222;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+th, td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: left;
+}
+</style>
+</head>
+
+<body>
+<h1>04. JavaScript Operators</h1>
+
+<h2>1. Introduction to Operators</h2>
+<p><strong>Meaning:</strong> Operators are symbols or keywords used to perform operations on values and variables.</p>
+<p><strong>Operands:</strong> The values on which an operator performs an operation.</p>
+<p><strong>Example:</strong> In <code>10 + 5</code>, <code>+</code> is the operator and <code>10</code> and <code>5</code> are operands.</p>
+
+<h2>2. Arithmetic Operators</h2>
+<p><strong>Meaning:</strong> Used to perform mathematical calculations.</p>
+<table>
+<tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr>
+<tr><td><code>+</code></td><td>Addition</td><td><code>10 + 5</code></td><td>15</td></tr>
+<tr><td><code>-</code></td><td>Subtraction</td><td><code>10 - 5</code></td><td>5</td></tr>
+<tr><td><code>*</code></td><td>Multiplication</td><td><code>10 * 5</code></td><td>50</td></tr>
+<tr><td><code>/</code></td><td>Division</td><td><code>10 / 5</code></td><td>2</td></tr>
+<tr><td><code>%</code></td><td>Remainder (modulus)</td><td><code>10 % 3</code></td><td>1</td></tr>
+<tr><td><code>**</code></td><td>Exponentiation</td><td><code>2 ** 3</code></td><td>8</td></tr>
+</table>
+<p><strong>Example:</strong></p>
+<pre><code>let a = 10;
+let b = 3;
+
+console.log(a + b);  // 13
+console.log(a - b);  // 7
+console.log(a * b);  // 30
+console.log(a / b);  // 3.333...
+console.log(a % b);  // 1
+console.log(a ** b); // 1000</code></pre>
+<p><strong>Important:</strong> The <code>+</code> operator also joins strings. For example, <code>"10" + 5</code> produces <code>"105"</code>.</p>
+
+<h2>3. Assignment Operators</h2>
+<p><strong>Meaning:</strong> Used to assign a value to a variable or update its existing value.</p>
+<table>
+<tr><th>Operator</th><th>Example</th><th>Same as</th></tr>
+<tr><td><code>=</code></td><td><code>x = 10</code></td><td>Assign 10 to x</td></tr>
+<tr><td><code>+=</code></td><td><code>x += 5</code></td><td><code>x = x + 5</code></td></tr>
+<tr><td><code>-=</code></td><td><code>x -= 5</code></td><td><code>x = x - 5</code></td></tr>
+<tr><td><code>*=</code></td><td><code>x *= 5</code></td><td><code>x = x * 5</code></td></tr>
+<tr><td><code>/=</code></td><td><code>x /= 5</code></td><td><code>x = x / 5</code></td></tr>
+<tr><td><code>%=</code></td><td><code>x %= 5</code></td><td><code>x = x % 5</code></td></tr>
+<tr><td><code>**=</code></td><td><code>x **= 2</code></td><td><code>x = x ** 2</code></td></tr>
+</table>
+<p><strong>Example:</strong></p>
+<pre><code>let x = 10;
+
+x += 5;
+console.log(x); // 15
+
+x *= 2;
+console.log(x); // 30
+
+x %= 7;
+console.log(x); // 2</code></pre>
+
+<h2>4. Comparison Operators</h2>
+<p><strong>Meaning:</strong> Compare two values and return a Boolean result: <code>true</code> or <code>false</code>.</p>
+<table>
+<tr><th>Operator</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><code>==</code></td><td>Equal value (allows type conversion)</td><td><code>5 == "5"</code> → true</td></tr>
+<tr><td><code>===</code></td><td>Strict equality (value and type)</td><td><code>5 === "5"</code> → false</td></tr>
+<tr><td><code>!=</code></td><td>Not equal (allows type conversion)</td><td><code>5 != "6"</code> → true</td></tr>
+<tr><td><code>!==</code></td><td>Strict not equal</td><td><code>5 !== "5"</code> → true</td></tr>
+<tr><td><code>&gt;</code></td><td>Greater than</td><td><code>10 &gt; 5</code> → true</td></tr>
+<tr><td><code>&lt;</code></td><td>Less than</td><td><code>10 &lt; 5</code> → false</td></tr>
+<tr><td><code>&gt;=</code></td><td>Greater than or equal to</td><td><code>10 &gt;= 10</code> → true</td></tr>
+<tr><td><code>&lt;=</code></td><td>Less than or equal to</td><td><code>5 &lt;= 10</code> → true</td></tr>
+</table>
+<p><strong>Example:</strong></p>
+<pre><code>console.log(10 == "10");  // true
+console.log(10 === "10"); // false
+console.log(10 != "10");  // false
+console.log(10 !== "10"); // true</code></pre>
+<p><strong>Important:</strong> Prefer <code>===</code> and <code>!==</code> to avoid unexpected type coercion.</p>
+
+<h2>5. Logical Operators</h2>
+<p><strong>Meaning:</strong> Used to combine or reverse Boolean conditions.</p>
+<table>
+<tr><th>Operator</th><th>Name</th><th>Meaning</th></tr>
+<tr><td><code>&&</code></td><td>Logical AND</td><td>True only when both operands are truthy</td></tr>
+<tr><td><code>||</code></td><td>Logical OR</td><td>True when at least one operand is truthy</td></tr>
+<tr><td><code>!</code></td><td>Logical NOT</td><td>Reverses the truthiness of a value</td></tr>
+</table>
+<p><strong>Examples:</strong></p>
+<pre><code>let age = 22;
+let hasID = true;
+
+console.log(age >= 18 && hasID); // true
+console.log(age < 18 || hasID);  // true
+console.log(!hasID);             // false</code></pre>
+<p><strong>Important:</strong> Logical operators can return one of their operands, not necessarily a Boolean value. They also use short-circuit evaluation.</p>
+
+<h2>6. Unary Operators</h2>
+<p><strong>Meaning:</strong> Unary operators work with a single operand.</p>
+<p><strong>Common unary operators:</strong></p>
+<p><code>typeof</code>: Returns the type of a value.</p>
+<p><code>+</code>: Converts a value to a number when possible.</p>
+<p><code>-</code>: Converts to a number and changes its sign.</p>
+<p><code>!</code>: Converts a value to Boolean and reverses it.</p>
+<p><code>delete</code>: Removes an object's property.</p>
+<p><strong>Examples:</strong></p>
+<pre><code>let value = "25";
+
+console.log(typeof value); // "string"
+console.log(+value);       // 25
+console.log(-value);       // -25
+console.log(!value);       // false
+
+let student = { name: "Alex", age: 20 };
+delete student.age;
+console.log(student);      // { name: "Alex" }</code></pre>
+
+<h2>7. Increment and Decrement Operators</h2>
+<p><strong>Meaning:</strong> Increment increases a numeric value by 1. Decrement decreases it by 1.</p>
+<p><strong>Increment:</strong> <code>++</code></p>
+<p><strong>Decrement:</strong> <code>--</code></p>
+<p><strong>Pre-increment (++x):</strong> Increases the value first, then returns the updated value.</p>
+<p><strong>Post-increment (x++):</strong> Returns the current value first, then increases it.</p>
+<p><strong>Pre-decrement (--x):</strong> Decreases the value first, then returns the updated value.</p>
+<p><strong>Post-decrement (x--):</strong> Returns the current value first, then decreases it.</p>
+<p><strong>Example:</strong></p>
+<pre><code>let x = 5;
+
+console.log(++x); // 6
+console.log(x);   // 6
+
+let y = 5;
+
+console.log(y++); // 5
+console.log(y);   // 6
+
+console.log(--y); // 5
+console.log(y--); // 5
+console.log(y);   // 4</code></pre>
+<p><strong>Important:</strong> Prefix and postfix make a difference when the increment or decrement expression is used inside another expression.</p>
+
+<h2>8. Ternary Operator</h2>
+<p><strong>Meaning:</strong> A short form of <code>if...else</code> that selects one of two expressions based on a condition.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code>condition ? valueIfTrue : valueIfFalse;</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>let age = 17;
+
+let result = age >= 18 ? "Adult" : "Minor";
+
+console.log(result); // Minor</code></pre>
+<p><strong>Important:</strong> It is called ternary because it has three operands: condition, true expression, and false expression. Use it for simple decisions.</p>
+
+<h2>9. Operator Precedence</h2>
+<p><strong>Meaning:</strong> Operator precedence determines which operator is evaluated first when an expression contains multiple operators.</p>
+<p><strong>Example:</strong></p>
+<pre><code>let result = 10 + 2 * 3;
+
+console.log(result); // 16</code></pre>
+<p>Multiplication is performed before addition.</p>
+<p><strong>Using parentheses:</strong> Parentheses can change the order of evaluation.</p>
+<pre><code>let result = (10 + 2) * 3;
+
+console.log(result); // 36</code></pre>
+<p><strong>Common precedence order (higher to lower):</strong></p>
+<p>1. Parentheses: <code>()</code><br>
+2. Member access and function calls: <code>.</code>, <code>()</code><br>
+3. Unary operators: <code>! ++ -- typeof</code><br>
+4. Exponentiation: <code>**</code><br>
+5. Multiplication, division, remainder: <code>* / %</code><br>
+6. Addition and subtraction: <code>+ -</code><br>
+7. Relational: <code>&gt; &lt; &gt;= &lt;=</code><br>
+8. Equality: <code>== === != !==</code><br>
+9. Logical AND: <code>&&</code><br>
+10. Logical OR: <code>||</code><br>
+11. Ternary: <code>?:</code><br>
+12. Assignment: <code>= += -= *=</code></p>
+<p><strong>Important:</strong> Operators with the same precedence are usually evaluated according to associativity. Exponentiation and assignment are right-associative; most arithmetic operators are left-associative.</p>
+
+<h2>10. Practical Programs</h2>
+<p><strong>1. Check even or odd using modulus</strong></p>
+<pre><code>let number = 17;
+
+if (number % 2 === 0) {
+    console.log("Even");
+} else {
+    console.log("Odd");
+}</code></pre>
+
+<p><strong>2. Swap two variables using a third variable</strong></p>
+<pre><code>let a = 10;
+let b = 20;
+
+let temp = a;
+a = b;
+b = temp;
+
+console.log(a, b); // 20 10</code></pre>
+
+<p><strong>3. Find the largest of two numbers using ternary</strong></p>
+<pre><code>let a = 25;
+let b = 40;
+
+let largest = a > b ? a : b;
+console.log(largest); // 40</code></pre>
+
+<p><strong>4. Check eligibility using logical operators</strong></p>
+<pre><code>let age = 22;
+let hasID = true;
+
+if (age >= 18 && hasID) {
+    console.log("Entry allowed");
+} else {
+    console.log("Entry denied");
+}</code></pre>
+
+<h2>11. Important JavaScript Points</h2>
+<p>1. Arithmetic operators perform calculations; <code>+</code> can also concatenate strings.</p>
+<p>2. Assignment operators update variable values.</p>
+<p>3. Comparison operators return Boolean results.</p>
+<p>4. Prefer strict equality: <code>===</code> and <code>!==</code>.</p>
+<p>5. Logical operators use short-circuit evaluation and may return operand values.</p>
+<p>6. Prefix increment/decrement changes the value before returning it; postfix returns the old value first.</p>
+<p>7. Use parentheses to make complex expressions easier to understand.</p>
+<p>8. Do not confuse <code>=</code> (assignment), <code>==</code> (loose equality), and <code>===</code> (strict equality).</p>
+
+<h2>12. Practice Questions</h2>
+<p>
+1. Find the output of <code>15 % 4</code> and <code>2 ** 5</code>.<br>
+2. Predict the output of <code>"10" + 5</code> and <code>"10" - 5</code>.<br>
+3. Demonstrate all compound assignment operators.<br>
+4. Find the difference between <code>==</code> and <code>===</code> with examples.<br>
+5. Write a condition using logical AND and OR.<br>
+6. Explain the difference between <code>++x</code> and <code>x++</code>.<br>
+7. Find the output of <code>let x = 5; console.log(x++ + ++x)</code>.<br>
+8. Find the largest of three numbers using the ternary operator.<br>
+9. Predict the output of <code>10 + 2 * 3 ** 2</code>.<br>
+10. Use parentheses to change the result of an arithmetic expression.
+</p>
+
+</body>
+</html>

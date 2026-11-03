@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03 - Variables and Data Types</title>
+<script>
+// 03 - Variables and Data Types
+// These examples run when the HTML page loads.
+
+console.log("1. Variable declarations:");
+var oldName = "Alex";
+let userAge = 21;
+const country = "India";
+console.log(oldName, userAge, country);
+
+console.log("2. typeof operator:");
+console.log(typeof "Hello"); // string
+console.log(typeof 25);      // number
+console.log(typeof true);    // boolean
+console.log(typeof undefined); // undefined
+console.log(typeof null);    // object (historical JavaScript behaviour)
+
+console.log("3. Dynamic typing:");
+let value = 100;
+console.log(value, typeof value);
+value = "JavaScript";
+console.log(value, typeof value);
+value = true;
+console.log(value, typeof value);
+
+console.log("4. Primitive and non-primitive values:");
+let score = 90;
+let student = { name: "Alex", score: 90 };
+let numbers = [10, 20, 30];
+console.log(typeof score);   // number
+console.log(typeof student); // object
+console.log(typeof numbers); // object
+</script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 0 20px;
+    color: #222;
+    background-color: #ffffff;
+}
+h1 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 8px;
+}
+h2 {
+    color: #285f8f;
+    margin-top: 28px;
+}
+p {
+    margin: 8px 0;
+}
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 12px;
+    overflow-x: auto;
+}
+code {
+    font-family: Consolas, monospace;
+    color: #a31515;
+}
+pre code {
+    color: #222;
+}
+</style>
+</head>
+
+<body>
+<h1>03. Variables and Data Types</h1>
+
+<h2>1. Variables in JavaScript</h2>
+<p><strong>Meaning:</strong> A variable is a named container used to store data in a program.</p>
+<p>JavaScript provides three keywords to declare variables: <code>var</code>, <code>let</code>, and <code>const</code>.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code>keyword variableName = value;</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>let studentName = "Alex";
+let age = 21;
+
+console.log(studentName);
+console.log(age);</code></pre>
+
+<h2>2. var</h2>
+<p><strong>Meaning:</strong> <code>var</code> is the older keyword used to declare variables in JavaScript.</p>
+<p><strong>Reassignment:</strong> Allowed.</p>
+<p><strong>Redeclaration:</strong> Allowed in the same scope.</p>
+<p><strong>Scope:</strong> Function-scoped, or globally scoped when declared outside a function. It is not block-scoped.</p>
+<p><strong>Hoisting:</strong> Its declaration is hoisted and initialized with <code>undefined</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code>var age = 20;
+var age = 25; // Redeclaration allowed
+age = 30;     // Reassignment allowed
+
+console.log(age); // 30</code></pre>
+<p><strong>Important:</strong> Avoid using <code>var</code> in most modern JavaScript code because its function scope and redeclaration behaviour can cause unexpected results.</p>
+
+<h2>3. let</h2>
+<p><strong>Meaning:</strong> <code>let</code> declares a block-scoped variable.</p>
+<p><strong>Reassignment:</strong> Allowed.</p>
+<p><strong>Redeclaration:</strong> Not allowed in the same scope.</p>
+<p><strong>Scope:</strong> Block-scoped, meaning it is available only inside the block where it is declared.</p>
+<p><strong>Hoisting:</strong> It is hoisted but remains in the Temporal Dead Zone (TDZ) until its declaration is evaluated.</p>
+<p><strong>Example:</strong></p>
+<pre><code>let marks = 70;
+marks = 85; // Reassignment allowed
+
+console.log(marks); // 85
+
+if (true) {
+    let message = "Inside block";
+    console.log(message);
+}
+
+// console.log(message); // ReferenceError</code></pre>
+
+<h2>4. const</h2>
+<p><strong>Meaning:</strong> <code>const</code> declares a block-scoped variable whose binding cannot be reassigned.</p>
+<p><strong>Reassignment:</strong> Not allowed.</p>
+<p><strong>Redeclaration:</strong> Not allowed in the same scope.</p>
+<p><strong>Initialization:</strong> Must be assigned a value when declared.</p>
+<p><strong>Scope:</strong> Block-scoped.</p>
+<p><strong>Example:</strong></p>
+<pre><code>const country = "India";
+
+console.log(country);
+
+// country = "USA"; // TypeError</code></pre>
+<p><strong>Important:</strong> For objects and arrays declared with <code>const</code>, their contents can still be changed. Only reassignment of the variable binding is prevented.</p>
+<pre><code>const student = { name: "Alex" };
+student.name = "Sam"; // Allowed
+
+const numbers = [10, 20];
+numbers.push(30); // Allowed
+
+console.log(student);
+console.log(numbers);</code></pre>
+
+<h2>5. Difference Between var, let and const</h2>
+<table>
+<tr><th>Feature</th><th>var</th><th>let</th><th>const</th></tr>
+<tr><td>Reassignment</td><td>Allowed</td><td>Allowed</td><td>Not allowed</td></tr>
+<tr><td>Redeclaration in same scope</td><td>Allowed</td><td>Not allowed</td><td>Not allowed</td></tr>
+<tr><td>Scope</td><td>Function</td><td>Block</td><td>Block</td></tr>
+<tr><td>Must initialize during declaration</td><td>No</td><td>No</td><td>Yes</td></tr>
+<tr><td>Hoisting behaviour</td><td>Initialized as undefined</td><td>TDZ</td><td>TDZ</td></tr>
+</table>
+<p><strong>Best Practice:</strong> Prefer <code>const</code> by default. Use <code>let</code> when reassignment is needed. Avoid <code>var</code> in modern code.</p>
+
+<h2>6. Variable Naming Rules</h2>
+<p>1. A variable name can contain letters, digits, underscore (<code>_</code>), and dollar sign (<code>$</code>).</p>
+<p>2. A variable name cannot start with a digit.</p>
+<p>3. Spaces are not allowed in variable names.</p>
+<p>4. JavaScript variable names are case-sensitive. <code>age</code> and <code>Age</code> are different.</p>
+<p>5. Reserved keywords such as <code>let</code>, <code>class</code>, and <code>return</code> cannot be used as variable names.</p>
+<p>6. Use meaningful names and prefer camelCase for multi-word variable names.</p>
+<p><strong>Valid names:</strong></p>
+<pre><code>let age = 21;
+let studentName = "Alex";
+let _count = 10;
+let $price = 500;</code></pre>
+<p><strong>Invalid names:</strong></p>
+<pre><code>// let 1name = "Alex";   // Starts with a digit
+// let student name = ""; // Contains a space
+// let class = "A";       // Reserved keyword</code></pre>
+
+<h2>7. Primitive Data Types</h2>
+<p><strong>Meaning:</strong> Primitive data types store single values. Primitive values are immutable.</p>
+<p><strong>JavaScript has 7 primitive data types:</strong></p>
+<p><strong>1. String:</strong> Represents text.</p>
+<pre><code>let name = "Alex";
+let city = 'Bangalore';</code></pre>
+<p><strong>2. Number:</strong> Represents integers and decimal numbers. It also includes <code>NaN</code> and <code>Infinity</code>.</p>
+<pre><code>let age = 21;
+let price = 99.5;</code></pre>
+<p><strong>3. BigInt:</strong> Represents integers larger than the safe range of the Number type.</p>
+<pre><code>let largeNumber = 12345678901234567890n;</code></pre>
+<p><strong>4. Boolean:</strong> Represents <code>true</code> or <code>false</code>.</p>
+<pre><code>let isLoggedIn = true;</code></pre>
+<p><strong>5. Undefined:</strong> A variable that has been declared but has not been assigned a value.</p>
+<pre><code>let result;
+console.log(result); // undefined</code></pre>
+<p><strong>6. Null:</strong> Represents an intentional absence of a value.</p>
+<pre><code>let selectedValue = null;</code></pre>
+<p><strong>7. Symbol:</strong> Represents a unique value, often used as a unique object property key.</p>
+<pre><code>let id = Symbol("id");</code></pre>
+
+<h2>8. Non-Primitive Data Types</h2>
+<p><strong>Meaning:</strong> Non-primitive values are objects. They can hold collections of data and more complex structures.</p>
+<p><strong>1. Object:</strong> Stores data as key-value pairs.</p>
+<pre><code>let student = {
+    name: "Alex",
+    age: 21
+};
+
+console.log(student.name);</code></pre>
+<p><strong>2. Array:</strong> Stores an ordered collection of values. Arrays are objects in JavaScript.</p>
+<pre><code>let marks = [80, 90, 75];
+
+console.log(marks[0]); // 80</code></pre>
+<p><strong>3. Function:</strong> A reusable block of code. Functions are callable objects in JavaScript.</p>
+<pre><code>function greet() {
+    console.log("Hello");
+}
+
+greet();</code></pre>
+<p><strong>Important:</strong> Objects, arrays, and functions are reference values. Assigning one object variable to another copies the reference, not a separate object.</p>
+
+<h2>9. typeof Operator</h2>
+<p><strong>Meaning:</strong> The <code>typeof</code> operator returns a string indicating the type of a value.</p>
+<p><strong>Syntax:</strong> <code>typeof value</code> or <code>typeof(value)</code></p>
+<p><strong>Examples:</strong></p>
+<pre><code>console.log(typeof "Hello");     // string
+console.log(typeof 100);         // number
+console.log(typeof 10n);         // bigint
+console.log(typeof true);        // boolean
+console.log(typeof undefined);   // undefined
+console.log(typeof Symbol());    // symbol
+console.log(typeof {});          // object
+console.log(typeof []);          // object
+console.log(typeof function(){});// function
+console.log(typeof null);        // object</code></pre>
+<p><strong>Important points:</strong></p>
+<p>1. <code>typeof null</code> returns <code>"object"</code>. This is a historical JavaScript behaviour, not the actual type of null.</p>
+<p>2. <code>typeof []</code> returns <code>"object"</code>. Use <code>Array.isArray()</code> to check for an array.</p>
+<p>3. <code>typeof function() {}</code> returns <code>"function"</code>.</p>
+<pre><code>console.log(Array.isArray([10, 20])); // true
+console.log(Array.isArray({}));       // false</code></pre>
+
+<h2>10. Dynamic Typing</h2>
+<p><strong>Meaning:</strong> JavaScript is dynamically typed. A variable can hold values of different data types during program execution.</p>
+<p>The data type belongs to the value, not permanently to the variable.</p>
+<p><strong>Example:</strong></p>
+<pre><code>let value = 100;
+console.log(value, typeof value); // 100 number
+
+value = "Hello";
+console.log(value, typeof value); // Hello string
+
+value = true;
+console.log(value, typeof value); // true boolean</code></pre>
+<p><strong>Important:</strong> You do not need to declare a variable's data type explicitly in JavaScript. The type is determined at runtime from the assigned value.</p>
+
+<h2>11. Practical Programs</h2>
+<p><strong>1. Display variable values and types</strong></p>
+<pre><code>let name = "Alex";
+let age = 22;
+let isStudent = true;
+
+console.log(name, typeof name);
+console.log(age, typeof age);
+console.log(isStudent, typeof isStudent);</code></pre>
+
+<p><strong>2. Demonstrate dynamic typing</strong></p>
+<pre><code>let data = 50;
+console.log(typeof data);
+
+data = "Fifty";
+console.log(typeof data);
+
+data = false;
+console.log(typeof data);</code></pre>
+
+<p><strong>3. Check whether a value is an array</strong></p>
+<pre><code>let value = [10, 20, 30];
+
+if (Array.isArray(value)) {
+    console.log("It is an array");
+} else {
+    console.log("It is not an array");
+}</code></pre>
+
+<p><strong>4. Demonstrate const with an object</strong></p>
+<pre><code>const employee = {
+    name: "Sam",
+    salary: 30000
+};
+
+employee.salary = 35000; // Allowed
+console.log(employee);
+
+// employee = {}; // Not allowed</code></pre>
+
+<h2>12. Important JavaScript Points</h2>
+<p>1. JavaScript is dynamically typed.</p>
+<p>2. Use <code>const</code> by default and <code>let</code> when reassignment is required.</p>
+<p>3. <code>var</code> is function-scoped, while <code>let</code> and <code>const</code> are block-scoped.</p>
+<p>4. JavaScript has 7 primitive data types: String, Number, BigInt, Boolean, Undefined, Null, and Symbol.</p>
+<p>5. Arrays and functions are also objects in JavaScript.</p>
+<p>6. <code>typeof null</code> returns <code>"object"</code> because of a historical behaviour.</p>
+<p>7. A <code>const</code> object or array can have its contents modified, but its variable binding cannot be reassigned.</p>
+
+<h2>13. Practice Questions</h2>
+<p>
+1. Declare variables using <code>var</code>, <code>let</code>, and <code>const</code>.<br>
+2. Demonstrate reassignment and redeclaration for all three keywords.<br>
+3. Write examples of function scope and block scope.<br>
+4. Identify valid and invalid variable names.<br>
+5. List all 7 primitive data types with examples.<br>
+6. Create an object, an array, and a function.<br>
+7. Find the output of <code>typeof null</code>, <code>typeof []</code>, and <code>typeof function(){}</code>.<br>
+8. Check whether a variable contains an array using <code>Array.isArray()</code>.<br>
+9. Demonstrate dynamic typing by assigning different data types to one variable.<br>
+10. Explain the difference between primitive values and object reference values.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript - Introduction & Basics</title>
+
+<style>
+    body{font-family:Arial,sans-serif;line-height:1.6;max-width:900px;margin:25px auto;padding:0 20px;color:#222;background:#fff}
+    h1{color:#1f4e79;border-bottom:2px solid #1f4e79;padding-bottom:8px}
+    h2{color:#285f8f;margin-top:28px}
+    p{margin:8px 0}
+    pre{background:#f4f4f4;border:1px solid #ddd;border-radius:5px;padding:12px;overflow-x:auto}
+    code{font-family:Consolas,monospace;color:#a31515}
+    pre code{color:#222}
+    table{border-collapse:collapse;width:100%;margin:10px 0}
+    th,td{border:1px solid #999;padding:8px;text-align:left}
+</style>
+</head>
+<body>
+<h1>JavaScript - Introduction & Basics</h1>
+
+<h2>1. Introduction to JavaScript</h2>
+<p><strong>Meaning:</strong> JavaScript is a high-level programming language mainly used to make web pages interactive and dynamic.</p>
+<p><strong>Lightweight & Interpreted:</strong> JavaScript is commonly described as an interpreted language. Modern engines also use Just-In-Time (JIT) compilation to improve performance.</p>
+<p><strong>Primary Role:</strong> Adds behaviour and interactivity to web pages. It can also run outside browsers using Node.js.</p>
+<p><strong>Multi-Paradigm:</strong> Supports object-oriented, imperative, and declarative programming styles.</p>
+<p><strong>First-Class Functions:</strong> Functions can be stored in variables, passed as arguments, and returned from other functions.</p>
+
+<h2>2. History of JavaScript</h2>
+<p><strong>1995:</strong> Created by Brendan Eich at Netscape.</p>
+<p><strong>Original names:</strong> Mocha → LiveScript → JavaScript.</p>
+<p><strong>Standardization:</strong> ECMAScript is the language standard maintained by Ecma International.</p>
+<p><strong>ES6 / ES2015:</strong> A major update that introduced features such as <code>let</code>, <code>const</code>, arrow functions, classes, and Promises.</p>
+
+<h2>3. Features of JavaScript</h2>
+<p><strong>Dynamic Typing:</strong> A variable can hold values of different data types during execution.</p>
+<p><strong>First-Class Functions:</strong> Functions can be used like values.</p>
+<p><strong>Prototype-Based Inheritance:</strong> Objects can inherit properties and methods through prototypes.</p>
+<p><strong>Asynchronous Programming:</strong> Supports callbacks, Promises, and <code>async/await</code>.</p>
+<p><strong>Single-Threaded Execution:</strong> JavaScript code normally runs on one main thread. The event loop coordinates asynchronous work.</p>
+
+<h2>4. JavaScript vs Java</h2>
+<table>
+<tr><th>JavaScript</th><th>Java</th></tr>
+<tr><td>Dynamically typed</td><td>Statically typed</td></tr>
+<tr><td>Prototype-based object model</td><td>Class-based object model</td></tr>
+<tr><td>Runs in browsers and environments such as Node.js</td><td>Commonly runs on the Java Virtual Machine (JVM)</td></tr>
+<tr><td>Used for web interactivity and full-stack web development</td><td>Used for enterprise, backend, Android-related and other applications</td></tr>
+<tr><td>Modern engines compile/JIT-compile code during execution</td><td>Typically compiled to bytecode and executed by the JVM</td></tr>
+</table>
+<p><strong>Important:</strong> Java and JavaScript are different programming languages. Their names are similar, but their design and runtimes are different.</p>
+
+<h2>5. Uses of JavaScript</h2>
+<p><strong>Client-Side Web:</strong> Form validation, event handling, and DOM manipulation.</p>
+<p><strong>Server-Side:</strong> Backend applications and APIs using Node.js and frameworks such as Express.</p>
+<p><strong>Mobile Apps:</strong> Cross-platform applications using React Native or Ionic.</p>
+<p><strong>Desktop Apps:</strong> Desktop applications using Electron, for example Visual Studio Code.</p>
+
+<h2>6. How JavaScript Works</h2>
+<p><strong>JavaScript Engine:</strong> Processes and executes JavaScript code and manages its memory.</p>
+<p><strong>Call Stack:</strong> Tracks function calls. It follows LIFO (Last In, First Out).</p>
+<p><strong>Heap:</strong> Memory area used for dynamically allocated data, such as objects.</p>
+<p><strong>Web APIs:</strong> Browser features such as timers, DOM events, and network requests.</p>
+<p><strong>Task Queue:</strong> Holds callbacks waiting to run, such as timer and event callbacks.</p>
+<p><strong>Event Loop:</strong> Coordinates queued callbacks and the call stack. It schedules a callback when the call stack is clear.</p>
+<p><strong>Basic Flow:</strong> Synchronous code runs on the call stack. Asynchronous browser work is handled by browser APIs. Its callback is queued and runs when the call stack is clear.</p>
+
+<h2>7. JavaScript Engines</h2>
+<p>A JavaScript engine is a specialized software program or interpreter that executes JavaScript code.</p>
+<p>--</p>
+<p><strong>V8:</strong> Developed by Google; used by Chrome and Node.js.</p>
+<p><strong>SpiderMonkey:</strong> Developed by Mozilla; used by Firefox.</p>
+<p><strong>JavaScriptCore:</strong> Developed by Apple; used by Safari.</p>
+
+<h2>8. Basic JavaScript Example</h2>
+<pre><code>// Display output
+console.log("Hello, JavaScript!");
+
+// Variables
+let name = "Alex";
+const age = 21;
+
+// Check a condition
+if (age >= 18) {
+    console.log(name + " is an adult");
+}
+
+// Function
+function add(a, b) {
+    return a + b;
+}
+
+console.log(add(10, 20)); // 30</code></pre>
+
+<h2>9. Important Basics to Remember</h2>
+<p>1. JavaScript is case-sensitive: <code>name</code> and <code>Name</code> are different.</p>
+<p>2. Use <code>let</code> for values that may be reassigned.</p>
+<p>3. Use <code>const</code> when a variable binding should not be reassigned.</p>
+<p>4. <code>var</code> is the older variable declaration keyword. Understand it, but prefer <code>let</code> and <code>const</code> in modern code.</p>
+<p>5. <code>console.log()</code> prints information to the browser console or Node.js terminal.</p>
+<p>6. JavaScript statements often use semicolons. Automatic Semicolon Insertion exists, but consistent semicolon use is a good habit.</p>
+
+<h2>10. Quick Practice</h2>
+<p>
+1. Who created JavaScript and in which year?<br>
+2. What is ECMAScript?<br>
+3. Write two differences between Java and JavaScript.<br>
+4. What is the role of the call stack?<br>
+5. What does the event loop do?<br>
+6. Name three JavaScript engines.<br>
+7. Write a JavaScript program using <code>console.log()</code> to display your name.
+</p>
+
+<script>
+// This code runs when the HTML page loads.
+console.log("JavaScript is connected and running.");
+
+// Basic output example
+console.log("Hello, JavaScript!");
+
+// Variables and condition
+let learnerName = "Alex";
+const learnerAge = 21;
+
+if (learnerAge >= 18) {
+    console.log(learnerName + " is an adult");
+}
+
+// Function example
+function addNumbers(a, b) {
+    return a + b;
+}
+
+console.log("Addition:", addNumbers(10, 20));
+</script>
+</body>
+</html>

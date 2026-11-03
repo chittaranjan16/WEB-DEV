@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 - Conditional Statements</title>
+
+
+<script>
+// 06 - Conditional Statements: Practical JavaScript Examples
+
+// 1. Even or Odd
+let number = 14;
+console.log("Even or Odd:");
+console.log(number % 2 === 0 ? "Even" : "Odd");
+
+
+// 2. Voting eligibility
+let age = 20;
+console.log("Voting Eligibility:");
+if (age >= 18) {
+  console.log("Eligible to vote");
+} else {
+  console.log("Not eligible to vote");
+}
+
+
+// 3. Smallest of three numbers
+let a = 12, b = 7, c = 19;
+console.log("Smallest of Three:");
+if (a <= b && a <= c) {
+  console.log("Smallest:", a);
+} else if (b <= a && b <= c) {
+  console.log("Smallest:", b);
+} else {
+  console.log("Smallest:", c);
+}
+
+
+// 4. Leap year
+let year = 2028;
+let isLeapYear = year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+console.log("Leap Year:");
+console.log(isLeapYear ? "Leap year" : "Not a leap year");
+
+
+// 5. Day name using switch
+let day = 3;
+console.log("Day Name:");
+switch (day) {
+  case 1: console.log("Monday"); break;
+  case 2: console.log("Tuesday"); break;
+  case 3: console.log("Wednesday"); break;
+  case 4: console.log("Thursday"); break;
+  case 5: console.log("Friday"); break;
+  case 6: console.log("Saturday"); break;
+  case 7: console.log("Sunday"); break;
+
+  default: console.log("Invalid day");
+}
+
+
+// 6. Ternary operator
+let marks = 76;
+let grade = marks >= 90 ? "A" : marks >= 75 ? "B" : marks >= 60 ? "C" : marks >= 40 ? "D" : "Fail";
+console.log("Grade:", grade);
+
+
+
+let input = prompt("ENTER CHARACTER TO CHECK VOWEL OR NOT? ")
+
+if(input == 'a' || input == 'e' || input == 'i' || input == 'o' || input == 'u' ) {
+console.log("Vowel : " + input);
+}
+else{
+  console.log("Consonant : " + input)
+}
+
+
+
+let x = 4
+let y = 6
+let z = 5
+let secondHighest;
+
+if ((x >= y && x <= z) || (x <= y && x >= z)) {
+    secondHighest = x;
+} else if ((y >= x && y <= z) || (y <= x && y >= z)) {
+    secondHighest = y;
+} else {
+    secondHighest = z;
+}
+
+console.log("Second highest is: " + secondHighest);
+
+
+// PRACTICE - solve these yourself:
+// 1. Check whether a character is a vowel or consonant.
+// 2. Create a calculator using switch (+, -, *, /).
+// 3. Find the largest of three numbers.
+// 4. Assign a grade based on marks.
+// 5. Check login using nested if.
+// 6. Find the largest of two numbers using the ternary operator.
+</script>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 900px;
+        margin: 25px auto;
+        padding: 0 20px;
+        color: #222;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        color: #1f4e79;
+        border-bottom: 2px solid #1f4e79;
+        padding-bottom: 8px;
+    }
+
+    h2 {
+        color: #285f8f;
+        margin-top: 28px;
+    }
+
+    p {
+        margin: 8px 0;
+    }
+
+    pre {
+        background-color: #f4f4f4;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        padding: 12px;
+        overflow-x: auto;
+    }
+
+    code {
+        font-family: Consolas, monospace;
+        color: #a31515;
+    }
+
+    pre code {
+        color: #222;
+    }
+</style>
+
+</head>
+<body>
+<h1>06. Conditional Statements</h1>
+
+<h2>1. if Statement</h2>
+<p><strong>Meaning:</strong> Executes a block only when the condition is true.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code>if (condition) {
+  // code
+}</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>let age = 20;
+
+if (age >= 18) {
+  console.log("Eligible to vote");
+}</code></pre>
+<p><strong>Important:</strong> If the condition is false, the block is skipped.</p>
+
+<h2>2. if...else Statement</h2>
+<p><strong>Meaning:</strong> Executes one block if true and another if false.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code>if (condition) {
+  // true block
+} else {
+  // false block
+}</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>let number = 7;
+
+if (number % 2 === 0) {
+  console.log("Even");
+} else {
+  console.log("Odd");
+}</code></pre>
+
+<h2>3. else if Ladder</h2>
+<p><strong>Meaning:</strong> Checks multiple conditions in order. The first true block executes.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code>if (condition1) {
+  // code
+} else if (condition2) {
+  // code
+} else {
+  // default code
+}</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>let marks = 82;
+
+if (marks >= 90) {
+  console.log("A");
+} else if (marks >= 75) {
+  console.log("B");
+} else if (marks >= 40) {
+  console.log("Pass");
+} else {
+  console.log("Fail");
+}</code></pre>
+<p><strong>Important:</strong> Arrange conditions carefully. After the first true condition, remaining conditions are skipped.</p>
+
+<h2>4. Nested if</h2>
+<p><strong>Meaning:</strong> An <code>if</code> statement placed inside another conditional block.</p>
+<p><strong>Example:</strong></p>
+<pre><code>let age = 22;
+let hasID = true;
+
+if (age >= 18) {
+  if (hasID) {
+    console.log("Entry allowed");
+  } else {
+    console.log("ID required");
+  }
+} else {
+  console.log("Under age");
+}</code></pre>
+<p><strong>Important:</strong> The inner condition is checked only if execution enters the outer block.</p>
+
+<h2>5. switch Statement</h2>
+<p><strong>Meaning:</strong> Selects a matching case based on one expression. Useful for several fixed choices.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code>switch (expression) {
+  case value1:
+    // code
+    break;
+  case value2:
+    // code
+    break;
+  default:
+    // default code
+}</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>let day = 2;
+
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  default:
+    console.log("Invalid day");
+}</code></pre>
+<p><strong>Important points:</strong><br>
+1. <code>break</code> exits the switch and prevents fall-through.<br>
+2. Without <code>break</code>, execution continues into the next case.<br>
+3. <code>default</code> runs if no case matches; it is optional.<br>
+4. Case matching uses strict comparison (<code>===</code>).
+</p>
+
+<h2>6. Ternary (Conditional) Operator</h2>
+<p><strong>Meaning:</strong> Short form of a simple <code>if...else</code>. It returns one of two expressions.</p>
+<p><strong>Syntax:</strong></p>
+<pre><code>condition ? valueIfTrue : valueIfFalse;</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>let age = 17;
+let result = age >= 18 ? "Adult" : "Minor";
+
+console.log(result); // Minor</code></pre>
+<p><strong>Important:</strong> Called ternary because it has three operands: condition, true expression, and false expression. Use it for simple choices.</p>
+
+<h2>7. Practical Programs</h2>
+<p><strong>1. Positive, negative, or zero</strong></p>
+<pre><code>let num = -5;
+
+if (num > 0) {
+  console.log("Positive");
+} else if (num < 0) {
+  console.log("Negative");
+} else {
+  console.log("Zero");
+}</code></pre>
+
+<p><strong>2. Largest of two numbers</strong></p>
+<pre><code>let a = 25;
+let b = 40;
+
+if (a > b) {
+  console.log(a + " is greater");
+} else if (b > a) {
+  console.log(b + " is greater");
+} else {
+  console.log("Both are equal");
+}</code></pre>
+
+<p><strong>3. Largest of three numbers</strong></p>
+<pre><code>let a = 10, b = 25, c = 15;
+
+if (a >= b && a >= c) {
+  console.log("A is largest");
+} else if (b >= a && b >= c) {
+  console.log("B is largest");
+} else {
+  console.log("C is largest");
+}</code></pre>
+
+<p><strong>4. Leap year</strong></p>
+<pre><code>let year = 2024;
+
+if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+  console.log("Leap year");
+} else {
+  console.log("Not a leap year");
+}</code></pre>
+
+<p><strong>5. Calculator using switch</strong></p>
+<pre><code>let a = 12, b = 4;
+let operator = "*";
+
+switch (operator) {
+  case "+": console.log(a + b); break;
+  case "-": console.log(a - b); break;
+  case "*": console.log(a * b); break;
+  case "/": console.log(b !== 0 ? a / b : "Cannot divide by zero"); break;
+  default: console.log("Invalid operator");
+}</code></pre>
+
+<p><strong>6. Grade calculator</strong></p>
+<pre><code>let marks = 76;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 75) {
+  console.log("Grade B");
+} else if (marks >= 60) {
+  console.log("Grade C");
+} else if (marks >= 40) {
+  console.log("Grade D");
+} else {
+  console.log("Fail");
+}</code></pre>
+
+<h2>8. Important JavaScript Points</h2>
+<p>1. Conditions are evaluated as truthy or falsy values.</p>
+<p>2. Falsy values: <code>false</code>, <code>0</code>, <code>-0</code>, <code>0n</code>, <code>""</code>, <code>null</code>, <code>undefined</code>, and <code>NaN</code>.</p>
+<p>3. Empty arrays <code>[]</code> and empty objects <code>{}</code> are truthy in JavaScript.</p>
+<p>4. Prefer <code>===</code> and <code>!==</code> for strict comparisons.</p>
+<p>5. Use braces <code>{}</code> for conditional blocks, even for a single statement.</p>
+<p>6. In an <code>if...else if</code> ladder, only the first matching block executes.</p>
+<p>7. In a <code>switch</code>, use <code>break</code> to avoid unwanted fall-through.</p>
+
+<h2>9. Practice Questions</h2>
+<p>1. Check whether a number is even or odd.<br>
+2. Check voting eligibility.<br>
+3. Find the smallest of three numbers.<br>
+4. Check whether a year is a leap year.<br>
+5. Create a calculator using <code>switch</code>.<br>
+6. Print the day name using a number from 1 to 7.<br>
+7. Check whether a character is a vowel or consonant.<br>
+8. Calculate a grade using an <code>if...else if</code> ladder.<br>
+9. Check login using nested <code>if</code>.<br>
+10. Find the largest of two numbers using the ternary operator.</p>
+
+
+
+
+</body>
+</html>

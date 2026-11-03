@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - JavaScript Loops</title>
+    <script>
+        // Example: for loop
+        for (let i = 1; i <= 3; i++) {
+            console.log("For loop:", i);
+        }
+
+        // Example: while loop
+        let count = 1;
+        while (count <= 3) {
+            console.log("While loop:", count);
+            count++;
+        }
+
+        // Example: do...while loop
+        let number = 1;
+        do {
+            console.log("Do while:", number);
+            number++;
+        } while (number <= 3);
+
+        // Example: for...of
+        for (const value of [10, 20, 30]) {
+            console.log("Value:", value);
+        }
+
+        // Example: for...in
+        const student = { name: "Asha", age: 20 };
+        for (const key in student) {
+            console.log(key, student[key]);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 20px;
+            color: #222;
+            background-color: #ffffff;
+        }
+        h1 {
+            color: #1f4e79;
+            border-bottom: 2px solid #1f4e79;
+            padding-bottom: 8px;
+        }
+        h2 {
+            color: #285f8f;
+            margin-top: 28px;
+        }
+        p {
+            margin: 8px 0;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            padding: 12px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            color: #a31515;
+        }
+        pre code {
+            color: #222;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>07 - JavaScript Loops</h1>
+
+    <h2>1. What is a Loop?</h2>
+    <p><strong>Definition:</strong> A loop is used to execute a block of code repeatedly while a condition is true or while items remain in a collection.</p>
+    <p><strong>Why use loops?</strong> To avoid writing the same statements repeatedly and to process data efficiently.</p>
+    <p><strong>Loop parts:</strong> Initialization → Condition → Loop body → Update.</p>
+
+    <h2>2. for Loop</h2>
+    <p><strong>Use:</strong> When the number of repetitions is known or controlled by a counter.</p>
+    <pre><code>for (initialization; condition; update) {
+    // statements
+}
+
+for (let i = 1; i &lt;= 5; i++) {
+    console.log(i);
+}</code></pre>
+    <p><strong>Execution order:</strong> Initialization runs once → condition is checked → body executes → update runs → condition is checked again.</p>
+    <p><strong>Output:</strong> 1 2 3 4 5</p>
+    <p><strong>Important:</strong> If the condition is false initially, the body will not execute.</p>
+
+    <h2>3. while Loop</h2>
+    <p><strong>Use:</strong> When the number of repetitions is not known in advance and depends on a condition.</p>
+    <pre><code>let i = 1;
+
+while (i &lt;= 5) {
+    console.log(i);
+    i++;
+}</code></pre>
+    <p><strong>Execution:</strong> Condition is checked first. If true, the body executes. Then the condition is checked again.</p>
+    <p><strong>Important:</strong> A <code>while</code> loop may execute zero times. Update the condition variable to avoid an infinite loop.</p>
+
+    <h2>4. do...while Loop</h2>
+    <p><strong>Use:</strong> When the code must execute at least once, even if the condition is initially false.</p>
+    <pre><code>let i = 1;
+
+do {
+    console.log(i);
+    i++;
+} while (i &lt;= 5);</code></pre>
+    <p><strong>Execution:</strong> Body executes first → condition is checked → loop repeats if true.</p>
+    <p><strong>Important:</strong> The condition is checked after the body, so it always executes at least once.</p>
+
+    <h2>5. Difference: for, while and do...while</h2>
+    <table>
+        <tr><th>Loop</th><th>Condition check</th><th>Minimum executions</th><th>Common use</th></tr>
+        <tr><td>for</td><td>Before body</td><td>0</td><td>Counter-controlled repetition</td></tr>
+        <tr><td>while</td><td>Before body</td><td>0</td><td>Condition-controlled repetition</td></tr>
+        <tr><td>do...while</td><td>After body</td><td>1</td><td>Must run once before checking</td></tr>
+    </table>
+
+    <h2>6. Nested Loops</h2>
+    <p><strong>Definition:</strong> A loop inside another loop is called a nested loop.</p>
+    <p><strong>Use:</strong> Pattern printing, tables, matrices and working with rows and columns.</p>
+    <pre><code>for (let row = 1; row &lt;= 3; row++) {
+    for (let col = 1; col &lt;= 2; col++) {
+        console.log("row:", row, "column:", col);
+    }
+}</code></pre>
+    <p><strong>Key point:</strong> For each one iteration of the outer loop, the inner loop completes all its iterations.</p>
+    <p><strong>Iteration count:</strong> If the outer loop runs 3 times and the inner loop runs 2 times per outer iteration, the inner body runs 3 × 2 = 6 times.</p>
+
+    <h2>7. break Statement</h2>
+    <p><strong>Use:</strong> Immediately terminates the nearest enclosing loop or exits a <code>switch</code> statement.</p>
+    <pre><code>for (let i = 1; i &lt;= 5; i++) {
+    if (i === 3) {
+        break;
+    }
+    console.log(i);
+}
+
+// Output: 1 2</code></pre>
+    <p><strong>Remember:</strong> In nested loops, <code>break</code> exits only the nearest loop, not every outer loop.</p>
+
+    <h2>8. continue Statement</h2>
+    <p><strong>Use:</strong> Skips the remaining statements in the current iteration and moves to the next iteration.</p>
+    <pre><code>for (let i = 1; i &lt;= 5; i++) {
+    if (i === 3) {
+        continue;
+    }
+    console.log(i);
+}
+
+// Output: 1 2 4 5</code></pre>
+    <p><strong>Difference:</strong> <code>break</code> stops the loop; <code>continue</code> skips only the current iteration.</p>
+    <p><strong>Warning:</strong> In a <code>while</code> loop, make sure the update still happens when using <code>continue</code>, or the loop may become infinite.</p>
+
+    <h2>9. for...of Loop</h2>
+    <p><strong>Use:</strong> To iterate over the values of iterable objects such as arrays, strings, maps and sets.</p>
+    <pre><code>const fruits = ["Apple", "Mango", "Banana"];
+
+for (const fruit of fruits) {
+    console.log(fruit);
+}</code></pre>
+    <p><strong>Output:</strong> Apple, Mango, Banana</p>
+    <p><strong>Important:</strong> <code>for...of</code> gives each item/value directly. It does not directly provide the index.</p>
+
+    <h2>10. for...in Loop</h2>
+    <p><strong>Use:</strong> To iterate over enumerable property keys of an object.</p>
+    <pre><code>const student = {
+    name: "Asha",
+    age: 20,
+    course: "JavaScript"
+};
+
+for (const key in student) {
+    console.log(key, student[key]);
+}</code></pre>
+    <p><strong>Output:</strong> name Asha, age 20, course JavaScript</p>
+    <p><strong>Important:</strong> <code>for...in</code> gives property keys, not property values. Use <code>object[key]</code> to access a value.</p>
+    <p><strong>Array caution:</strong> Avoid using <code>for...in</code> as the normal way to loop through array values. Prefer <code>for</code>, <code>for...of</code> or array methods.</p>
+
+    <h2>11. for...of vs for...in</h2>
+    <table>
+        <tr><th>for...of</th><th>for...in</th></tr>
+        <tr><td>Iterates over values</td><td>Iterates over enumerable keys</td></tr>
+        <tr><td>Works with iterable objects</td><td>Works with enumerable object properties</td></tr>
+        <tr><td>Best for array/string values</td><td>Best for object property keys</td></tr>
+        <tr><td>Example: <code>for (const value of arr)</code></td><td>Example: <code>for (const key in obj)</code></td></tr>
+    </table>
+
+    <h2>12. Common Loop Programs</h2>
+
+    <p><strong>Program 1: Print numbers from 1 to 10</strong></p>
+    <pre><code>for (let i = 1; i &lt;= 10; i++) {
+    console.log(i);
+}</code></pre>
+
+    <p><strong>Program 2: Sum of first N natural numbers</strong></p>
+    <pre><code>let n = 5;
+let sum = 0;
+
+for (let i = 1; i &lt;= n; i++) {
+    sum += i;
+}
+console.log(sum); // 15</code></pre>
+
+    <p><strong>Program 3: Multiplication table</strong></p>
+    <pre><code>let n = 7;
+
+for (let i = 1; i &lt;= 10; i++) {
+    console.log(n + " x " + i + " = " + (n * i));
+}</code></pre>
+
+    <p><strong>Program 4: Factorial of a number</strong></p>
+    <pre><code>let n = 5;
+let factorial = 1;
+
+for (let i = 1; i &lt;= n; i++) {
+    factorial *= i;
+}
+console.log(factorial); // 120</code></pre>
+
+    <p><strong>Program 5: Count digits in a number</strong></p>
+    <pre><code>let n = 4582;
+let count = 0;
+
+while (n &gt; 0) {
+    count++;
+    n = Math.floor(n / 10);
+}
+console.log(count); // 4</code></pre>
+
+    <p><strong>Program 6: Reverse a number</strong></p>
+    <pre><code>let n = 1234;
+let reverse = 0;
+
+while (n &gt; 0) {
+    let digit = n % 10;
+    reverse = reverse * 10 + digit;
+    n = Math.floor(n / 10);
+}
+console.log(reverse); // 4321</code></pre>
+
+    <p><strong>Program 7: Check prime number</strong></p>
+    <pre><code>let n = 17;
+let isPrime = n &gt; 1;
+
+for (let i = 2; i * i &lt;= n; i++) {
+    if (n % i === 0) {
+        isPrime = false;
+        break;
+    }
+}
+console.log(isPrime ? "Prime" : "Not Prime");</code></pre>
+
+    <p><strong>Program 8: Print a right triangle pattern</strong></p>
+    <pre><code>let rows = 4;
+
+for (let i = 1; i &lt;= rows; i++) {
+    let line = "";
+    for (let j = 1; j &lt;= i; j++) {
+        line += "* ";
+    }
+    console.log(line);
+}
+
+// *
+// * *
+// * * *
+// * * * *</code></pre>
+
+    <h2>13. Important Rules & Common Mistakes</h2>
+    <p>1. Check the loop condition carefully to avoid off-by-one errors.</p>
+    <p>2. Ensure the loop variable changes when required; otherwise, an infinite loop may occur.</p>
+    <p>3. Use <code>===</code> for strict comparisons in loop conditions when appropriate.</p>
+    <p>4. <code>break</code> exits the nearest loop; <code>continue</code> skips the current iteration.</p>
+    <p>5. <code>do...while</code> ends with a semicolon after the condition.</p>
+    <p>6. <code>for...of</code> is for values; <code>for...in</code> is for keys.</p>
+    <p>7. In nested loops, track outer and inner variables separately.</p>
+    <p>8. Be careful with <code>continue</code> in <code>while</code> loops so the update is not skipped.</p>
+
+    <h2>14. Practice Questions (Try Without Looking at Solutions)</h2>
+    <p><strong>Basic:</strong></p>
+    <p>1. Print numbers from 1 to 50.</p>
+    <p>2. Print all even numbers between 1 and 100.</p>
+    <p>3. Find the sum of all odd numbers from 1 to N.</p>
+    <p>4. Print the multiplication table of a given number.</p>
+    <p>5. Find the factorial of a number using a <code>while</code> loop.</p>
+
+    <p><strong>Intermediate:</strong></p>
+    <p>6. Count the digits of a number.</p>
+    <p>7. Reverse a number and check whether it is a palindrome.</p>
+    <p>8. Find the sum of digits of a number.</p>
+    <p>9. Check whether a number is prime.</p>
+    <p>10. Print the Fibonacci series up to N terms.</p>
+
+    <p><strong>Nested Loops & Advanced:</strong></p>
+    <p>11. Print a square star pattern of N rows and columns.</p>
+    <p>12. Print a right-angled triangle and an inverted triangle.</p>
+    <p>13. Print a multiplication table from 1 to 10 using nested loops.</p>
+    <p>14. Find all prime numbers between 1 and N.</p>
+    <p>15. Given an array, print each value and its index using suitable loops.</p>
+    <p>16. Given an object, print all keys and values using <code>for...in</code>.</p>
+    <p>17. Use <code>continue</code> to print numbers from 1 to 30 but skip multiples of 3.</p>
+    <p>18. Use <code>break</code> to stop searching an array when a target value is found.</p>
+
+    <h2>15. Quick Revision</h2>
+    <p><strong>for:</strong> Best when you control repetition with a counter.</p>
+    <p><strong>while:</strong> Checks condition first; may run zero times.</p>
+    <p><strong>do...while:</strong> Runs body at least once.</p>
+    <p><strong>Nested loop:</strong> Loop inside another loop.</p>
+    <p><strong>break:</strong> Terminates the nearest loop.</p>
+    <p><strong>continue:</strong> Skips the current iteration.</p>
+    <p><strong>for...of:</strong> Iterates values.</p>
+    <p><strong>for...in:</strong> Iterates enumerable keys.</p>
+</body>
+</html>

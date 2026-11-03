@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>05 - Type Conversion</title>
+
+<script>
+// 05 - Type Conversion: Practical examples
+console.log("1. Implicit conversion:");
+console.log("10" + 5); // "105"
+console.log("10" - 5); // 5
+
+console.log("2. Explicit conversion:");
+console.log(String(100), typeof String(100));
+console.log(Number("25"), typeof Number("25"));
+console.log(Boolean("hello"), typeof Boolean("hello"));
+
+console.log("3. Number conversion and NaN:");
+console.log(Number(""), Number("42"), Number("hello"));
+console.log(Number.isNaN(Number("hello"))); // true
+
+console.log("4. Truthy and falsy:");
+console.log(Boolean(0));  // false
+console.log(Boolean("0")); // true
+console.log(Boolean([])); // true
+console.log(Boolean({})); // true
+
+console.log("5. Mixed conversion:");
+console.log(10 + "20" - 5); // 1015
+</script>
+
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 900px;
+        margin: 25px auto;
+        padding: 0 20px;
+        color: #222;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        color: #1f4e79;
+        border-bottom: 2px solid #1f4e79;
+        padding-bottom: 8px;
+    }
+
+    h2 {
+        color: #285f8f;
+        margin-top: 28px;
+    }
+
+    p {
+        margin: 8px 0;
+    }
+
+    pre {
+        background-color: #f4f4f4;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        padding: 12px;
+        overflow-x: auto;
+    }
+
+    code {
+        font-family: Consolas, monospace;
+        color: #a31515;
+    }
+
+    pre code {
+        color: #222;
+    }
+</style>
+</head>
+
+<body>
+<h1>05. Type Conversion</h1>
+
+<h2>1. Introduction to Type Conversion</h2>
+<p><strong>Meaning:</strong> Type conversion means changing a value from one data type to another.</p>
+<p>JavaScript supports two types of conversion: <strong>Implicit</strong> and <strong>Explicit</strong>.</p>
+<p><strong>Example:</strong></p>
+<pre><code>let value = "10";
+let result = Number(value);
+
+console.log(result);        // 10
+console.log(typeof result); // number</code></pre>
+
+<h2>2. Implicit Type Conversion (Type Coercion)</h2>
+<p><strong>Meaning:</strong> JavaScript automatically converts a value from one type to another during an operation.</p>
+<p><strong>Example 1: String conversion</strong></p>
+<pre><code>let result = "10" + 5;
+
+console.log(result);        // "105"
+console.log(typeof result); // string</code></pre>
+<p><strong>Example 2: Number conversion</strong></p>
+<pre><code>let result = "10" - 5;
+
+console.log(result); // 5</code></pre>
+<p><strong>Important:</strong> The <code>+</code> operator can perform addition or string concatenation. Other arithmetic operators usually convert numeric strings into numbers.</p>
+
+<h2>3. Explicit Type Conversion</h2>
+<p><strong>Meaning:</strong> The programmer manually converts a value into another data type using built-in functions or methods.</p>
+<p><strong>Common functions:</strong> <code>String()</code>, <code>Number()</code>, and <code>Boolean()</code>.</p>
+<p><strong>Example:</strong></p>
+<pre><code>let age = "25";
+
+let convertedAge = Number(age);
+
+console.log(convertedAge);        // 25
+console.log(typeof convertedAge); // number</code></pre>
+
+<h2>4. String Conversion</h2>
+<p><strong>Meaning:</strong> Converts a value into a string.</p>
+<p><strong>Syntax:</strong> <code>String(value)</code></p>
+<p><strong>Examples:</strong></p>
+<pre><code>console.log(String(100));       // "100"
+console.log(String(true));      // "true"
+console.log(String(null));      // "null"
+console.log(String(undefined)); // "undefined"
+
+let result = String(50);
+console.log(typeof result);     // string</code></pre>
+<p><strong>Important:</strong> <code>String(value)</code> converts the value without changing the original variable.</p>
+
+<h2>5. Number Conversion</h2>
+<p><strong>Meaning:</strong> Converts a value into a number.</p>
+<p><strong>Syntax:</strong> <code>Number(value)</code></p>
+<p><strong>Examples:</strong></p>
+<pre><code>console.log(Number("100"));  // 100
+console.log(Number("10.5")); // 10.5
+console.log(Number(""));     // 0
+console.log(Number(" "));    // 0
+console.log(Number(true));   // 1
+console.log(Number(false));  // 0
+console.log(Number(null));   // 0
+console.log(Number("hello"));// NaN</code></pre>
+<p><strong>Important:</strong> A string containing a valid numeric value can be converted. An invalid numeric string produces <code>NaN</code>.</p>
+<p><strong>Related function:</strong> <code>parseInt()</code> reads an integer from the beginning of a string, while <code>parseFloat()</code> reads a decimal number.</p>
+<pre><code>console.log(parseInt("25.8"));   // 25
+console.log(parseFloat("25.8")); // 25.8
+console.log(parseInt("25px"));   // 25
+console.log(Number("25px"));     // NaN</code></pre>
+
+<h2>6. Boolean Conversion</h2>
+<p><strong>Meaning:</strong> Converts a value into either <code>true</code> or <code>false</code>.</p>
+<p><strong>Syntax:</strong> <code>Boolean(value)</code></p>
+<p><strong>Examples:</strong></p>
+<pre><code>console.log(Boolean(1));        // true
+console.log(Boolean(0));        // false
+console.log(Boolean("hello"));  // true
+console.log(Boolean(""));       // false
+console.log(Boolean(null));     // false
+console.log(Boolean(undefined));// false
+console.log(Boolean([]));       // true
+console.log(Boolean({}));       // true</code></pre>
+<p><strong>Important:</strong> Boolean conversion follows JavaScript's truthy and falsy rules.</p>
+
+<h2>7. NaN (Not a Number)</h2>
+<p><strong>Meaning:</strong> <code>NaN</code> represents an invalid or unrepresentable numeric result.</p>
+<p><strong>Examples:</strong></p>
+<pre><code>let result = Number("hello");
+
+console.log(result);           // NaN
+console.log(typeof result);    // number
+console.log(Number("abc"));    // NaN
+console.log(10 / "hello");     // NaN</code></pre>
+<p><strong>Important points:</strong><br>
+1. The type of <code>NaN</code> is <code>number</code>.<br>
+2. <code>NaN === NaN</code> is <code>false</code>.<br>
+3. Use <code>Number.isNaN(value)</code> to check whether a value is exactly <code>NaN</code>.</p>
+<pre><code>let value = Number("abc");
+
+console.log(Number.isNaN(value)); // true
+console.log(Number.isNaN("abc")); // false</code></pre>
+
+<h2>8. Truthy and Falsy Values</h2>
+<p><strong>Meaning:</strong> In a condition, JavaScript treats values as either truthy or falsy.</p>
+<p><strong>Falsy values:</strong> These values behave like <code>false</code> in a condition.</p>
+<pre><code>false
+0
+-0
+0n
+""
+null
+undefined
+NaN</code></pre>
+<p><strong>Truthy values:</strong> All other values are truthy, including empty arrays and empty objects.</p>
+<pre><code>Boolean("hello"); // true
+Boolean("0");     // true
+Boolean("false"); // true
+Boolean([]);      // true
+Boolean({});      // true
+Boolean(-1);      // true</code></pre>
+<p><strong>Example using if:</strong></p>
+<pre><code>let username = "";
+
+if (username) {
+    console.log("Username is available");
+} else {
+    console.log("Username is empty");
+}
+
+// Output: Username is empty</code></pre>
+
+<h2>9. Practical Programs</h2>
+<p><strong>1. Convert string input into a number and add 10</strong></p>
+<pre><code>let input = "25";
+let number = Number(input);
+
+console.log(number + 10); // 35</code></pre>
+
+<p><strong>2. Check whether input is a valid number</strong></p>
+<pre><code>let input = "hello";
+let number = Number(input);
+
+if (Number.isNaN(number)) {
+    console.log("Invalid number");
+} else {
+    console.log("Valid number:", number);
+}</code></pre>
+
+<p><strong>3. Check whether a value is truthy or falsy</strong></p>
+<pre><code>let value = [];
+
+if (value) {
+    console.log("Truthy");
+} else {
+    console.log("Falsy");
+}
+
+// Output: Truthy</code></pre>
+
+<p><strong>4. Compare implicit and explicit conversion</strong></p>
+<pre><code>let a = "20";
+
+console.log(a + 5);          // "205" (implicit string conversion)
+console.log(Number(a) + 5);  // 25 (explicit number conversion)</code></pre>
+
+<h2>10. Important JavaScript Points</h2>
+<p>1. Implicit conversion is also called <strong>type coercion</strong>.</p>
+<p>2. Explicit conversion is performed manually by the programmer.</p>
+<p>3. <code>typeof NaN</code> returns <code>"number"</code>.</p>
+<p>4. <code>Number("")</code> and <code>Number(" ")</code> return <code>0</code>.</p>
+<p>5. <code>Number("hello")</code> returns <code>NaN</code>.</p>
+<p>6. Empty array <code>[]</code> and empty object <code>{}</code> are truthy.</p>
+<p>7. <code>==</code> may perform type conversion, while <code>===</code> compares without type coercion.</p>
+<p>8. Prefer explicit conversion when the expected data type needs to be clear.</p>
+
+<h2>11. Practice Questions</h2>
+<p>
+1. Predict the output of <code>"5" + 2</code> and <code>"5" - 2</code>.<br>
+2. Convert a number, boolean, and null into strings.<br>
+3. Convert <code>"123"</code>, <code>""</code>, and <code>"abc"</code> into numbers.<br>
+4. Find the output of <code>Boolean(0)</code>, <code>Boolean("0")</code>, and <code>Boolean([])</code>.<br>
+5. Explain why <code>typeof NaN</code> returns <code>"number"</code>.<br>
+6. Check whether a user input is a valid number using <code>Number.isNaN()</code>.<br>
+7. Find all falsy values in JavaScript.<br>
+8. Predict the output of <code>10 + "20" - 5</code>.<br>
+9. Compare <code>Number("15px")</code> and <code>parseInt("15px")</code>.<br>
+10. Write a program that checks whether a variable is truthy or falsy.
+</p>
+
+
+</body>
+</html>
