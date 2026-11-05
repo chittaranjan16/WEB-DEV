@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>08 - JavaScript Functions</title>
+<script>
+// Function Declaration
+function greet(name) {
+    return "Hello, " + name;
+}
+
+// Function Expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Anonymous Function
+const welcome = function() {
+    console.log("Welcome!");
+};
+
+// Arrow Function
+const multiply = (a, b) => a * b;
+
+console.log(greet("Asha"));
+console.log(add(10, 20));
+welcome();
+console.log(multiply(4, 5));
+
+
+
+function main(){
+    console.log("main starts")
+    c
+    console.log("main ends")
+}
+
+function m1(){
+    console.log("m1 starts")
+    console.log("m1 ends")
+}
+</script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 0 20px;
+    color: #222;
+    background-color: #ffffff;
+}
+h1 {
+    color: #1f4e79;
+    border-bottom: 2px solid #1f4e79;
+    padding-bottom: 8px;
+}
+h2 {
+    color: #285f8f;
+    margin-top: 28px;
+}
+p { margin: 8px 0; }
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 12px;
+    overflow-x: auto;
+}
+code {
+    font-family: Consolas, monospace;
+    color: #a31515;
+}
+pre code { color: #222; }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+}
+th, td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: left;
+}
+</style>
+</head>
+<body>
+<h1>08 - JavaScript Functions</h1>
+
+<h2>1. What is a Function?</h2>
+<p><strong>Definition:</strong> A function is a reusable block of code designed to perform a particular task.</p>
+<p><strong>Why use functions?</strong> Code reusability, less repetition, better organization, easier testing and maintenance.</p>
+<p><strong>Important:</strong> Defining a function does not normally execute its body. We must call (invoke) it.</p>
+<pre><code>function greet() {
+    console.log("Hello JavaScript");
+}
+
+greet(); // Function call</code></pre>
+
+<h2>2. Function Declaration</h2>
+<p><strong>Definition:</strong> A function created using the <code>function</code> keyword followed by a function name.</p>
+<pre><code>function functionName() {
+    // statements
+}
+
+function greet() {
+    console.log("Good morning!");
+}
+
+greet();</code></pre>
+<p><strong>Key points:</strong></p>
+<p>1. It has a function name.</p>
+<p>2. Function declarations are hoisted, so they can generally be called before their declaration in the same scope.</p>
+<p>3. Useful for named, reusable tasks.</p>
+<pre><code>sayHello(); // Works
+
+function sayHello() {
+    console.log("Hello!");
+}</code></pre>
+
+<h2>3. Function Expression</h2>
+<p><strong>Definition:</strong> A function stored inside a variable is called a function expression.</p>
+<pre><code>const greet = function() {
+    console.log("Hello!");
+};
+
+greet();</code></pre>
+<p><strong>Key points:</strong></p>
+<p>1. The function is assigned to a variable.</p>
+<p>2. It may be named or anonymous.</p>
+<p>3. A function expression assigned to <code>const</code> or <code>let</code> cannot be called before the variable is initialized.</p>
+<pre><code>greet(); // ReferenceError
+
+const greet = function() {
+    console.log("Hello!");
+};</code></pre>
+
+<h2>4. Anonymous Function</h2>
+<p><strong>Definition:</strong> A function that does not have its own name is called an anonymous function.</p>
+<pre><code>const welcome = function() {
+    console.log("Welcome!");
+};
+
+welcome();</code></pre>
+<p><strong>Important:</strong> Anonymous functions are commonly used as function expressions and callbacks.</p>
+<pre><code>setTimeout(function() {
+    console.log("Executed after 1 second");
+}, 1000);</code></pre>
+
+<h2>5. Arrow Function</h2>
+<p><strong>Definition:</strong> A shorter way to write function expressions, introduced in ES6 (ES2015).</p>
+<pre><code>// Function expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function
+const addArrow = (a, b) => {
+    return a + b;
+};
+
+console.log(addArrow(10, 20)); // 30</code></pre>
+<p><strong>Implicit return:</strong> For a single expression, braces and <code>return</code> can be omitted.</p>
+<pre><code>const square = n => n * n;
+
+console.log(square(5)); // 25</code></pre>
+<p><strong>Syntax rules:</strong></p>
+<p>1. No parameters: <code>() =&gt; expression</code></p>
+<p>2. One parameter: <code>x =&gt; x * 2</code> (parentheses optional).</p>
+<p>3. Multiple parameters: <code>(a, b) =&gt; a + b</code>.</p>
+<p>4. Multiple statements require curly braces; use an explicit <code>return</code> if a value is needed.</p>
+<pre><code>const checkEven = n => {
+    if (n % 2 === 0) {
+        return "Even";
+    }
+    return "Odd";
+};</code></pre>
+<p><strong>Important difference:</strong> Arrow functions do not have their own <code>this</code> or <code>arguments</code> binding. They cannot be used as constructors with <code>new</code>.</p>
+
+<h2>6. Parameters and Arguments</h2>
+<p><strong>Parameters:</strong> Variables listed in the function definition.</p>
+<p><strong>Arguments:</strong> Actual values passed when calling the function.</p>
+<pre><code>function add(a, b) { // a and b are parameters
+    console.log(a + b);
+}
+
+add(10, 20); // 10 and 20 are arguments</code></pre>
+<p>In <code>function greet(name)</code>, <code>name</code> is a parameter. In <code>greet("Ravi")</code>, <code>"Ravi"</code> is an argument.</p>
+<p><strong>Default parameters:</strong> A parameter can have a default value used when the argument is missing or <code>undefined</code>.</p>
+<pre><code>function greet(name = "Guest") {
+    console.log("Hello " + name);
+}
+
+greet("Asha"); // Hello Asha
+greet();       // Hello Guest</code></pre>
+<p><strong>Important:</strong> If fewer arguments are passed, missing parameters receive <code>undefined</code> unless a default value is provided.</p>
+
+<h2>7. Return Statement</h2>
+<p><strong>Definition:</strong> <code>return</code> sends a value back to the caller and ends that function's execution.</p>
+<pre><code>function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+console.log(result); // 30</code></pre>
+<p><strong>return vs console.log():</strong> <code>return</code> gives a value back so it can be stored, reused or passed to another function. <code>console.log()</code> only displays a value; it does not return that value from the function.</p>
+<pre><code>function getTotal(a, b) {
+    return a + b;
+}
+
+let total = getTotal(5, 3);
+console.log(total * 2); // 16</code></pre>
+<p><strong>Important rules:</strong></p>
+<p>1. Statements after <code>return</code> in the same execution path are not executed.</p>
+<p>2. A function without a <code>return</code> statement returns <code>undefined</code>.</p>
+<p>3. A bare <code>return;</code> also returns <code>undefined</code>.</p>
+<p>4. Keep the returned expression on the same line as <code>return</code>; a line break immediately after it triggers automatic semicolon insertion.</p>
+<pre><code>function getNumber() {
+    return
+    10;
+}
+
+console.log(getNumber()); // undefined</code></pre>
+
+<h2>8. Comparison of Function Types</h2>
+<table>
+<tr><th>Type</th><th>Example</th><th>Key point</th></tr>
+<tr><td>Declaration</td><td><code>function add() {}</code></td><td>Can be called before declaration</td></tr>
+<tr><td>Expression</td><td><code>const add = function() {}</code></td><td>Stored in a variable</td></tr>
+<tr><td>Anonymous</td><td><code>function() {}</code></td><td>No function name of its own</td></tr>
+<tr><td>Arrow</td><td><code>const add = () =&gt; {}</code></td><td>Short syntax; lexical <code>this</code></td></tr>
+</table>
+
+<h2>9. Practical Function Programs</h2>
+<p><strong>Program 1: Add two numbers</strong></p>
+<pre><code>function add(a, b) {
+    return a + b;
+}
+console.log(add(12, 8)); // 20</code></pre>
+
+<p><strong>Program 2: Check even or odd</strong></p>
+<pre><code>function checkEvenOdd(number) {
+    return number % 2 === 0 ? "Even" : "Odd";
+}
+console.log(checkEvenOdd(7)); // Odd</code></pre>
+
+<p><strong>Program 3: Largest of two numbers using arrow function</strong></p>
+<pre><code>const largest = (a, b) => a &gt; b ? a : b;
+console.log(largest(25, 18)); // 25</code></pre>
+
+<p><strong>Program 4: Factorial</strong></p>
+<pre><code>function factorial(n) {
+    let result = 1;
+    for (let i = 1; i &lt;= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+console.log(factorial(5)); // 120</code></pre>
+
+<p><strong>Program 5: Reverse a string</strong></p>
+<pre><code>function reverseString(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i &gt;= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+console.log(reverseString("hello")); // olleh</code></pre>
+
+<h2>10. Important Points &amp; Common Mistakes</h2>
+<p>1. A function runs when it is called, or when another operation invokes it (such as a callback).</p>
+<p>2. Use <code>return</code> when the caller needs a result; use <code>console.log()</code> to display output.</p>
+<p>3. Parameters belong to the function definition; arguments are supplied in the function call.</p>
+<p>4. Function declarations are hoisted; function expressions assigned to <code>let</code> or <code>const</code> cannot be called before initialization.</p>
+<p>5. Arrow functions with curly braces need an explicit <code>return</code> to return a value.</p>
+<p>6. An anonymous function has no name of its own; it can still be assigned to a variable.</p>
+<p>7. A function without a returned value produces <code>undefined</code>.</p>
+
+<h2>11. Practice Questions (Try Without Solutions)</h2>
+<p><strong>Basic:</strong></p>
+<p>1. Create a function to print your name.</p>
+<p>2. Create a function that accepts two numbers and displays their sum.</p>
+<p>3. Create a function that returns the square of a number.</p>
+<p>4. Create a function that checks whether a number is positive, negative or zero.</p>
+<p>5. Write a function with a default parameter for a user's name.</p>
+<p><strong>Intermediate:</strong></p>
+<p>6. Write a function that returns the largest of three numbers.</p>
+<p>7. Write a function that returns the factorial of a number.</p>
+<p>8. Write a function that counts the vowels in a string.</p>
+<p>9. Write a function that checks whether a string is a palindrome.</p>
+<p>10. Rewrite a normal function expression as an arrow function.</p>
+
+<h2>12. Quick Revision</h2>
+<p><strong>Function:</strong> Reusable block of code.</p>
+<p><strong>Declaration:</strong> Named function created with the <code>function</code> keyword.</p>
+<p><strong>Expression:</strong> Function assigned to a variable.</p>
+<p><strong>Anonymous:</strong> Function without its own name.</p>
+<p><strong>Arrow:</strong> Short function-expression syntax using <code>=&gt;</code>.</p>
+<p><strong>Parameter:</strong> Variable in the function definition.</p>
+<p><strong>Argument:</strong> Value passed during the function call.</p>
+<p><strong>return:</strong> Sends a value back and ends function execution.</p>
+</body>
+</html>
